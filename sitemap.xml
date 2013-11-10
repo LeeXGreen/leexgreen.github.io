@@ -1,15 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
-        <loc>http://leexgreen.github.io/blog/archives/</loc>
-        <lastmod>2013-11-10T13:26:47-05:00</lastmod>
+        <loc>http://LeeXGreen.github.io/blog/archives/</loc>
+        <lastmod>2013-11-10T14:05:55-05:00</lastmod>
     </url>
     <url>
-        <loc>http://leexgreen.github.io/</loc>
-        <lastmod>2013-11-10T13:26:47-05:00</lastmod>
-    </url>
-    <url>
-        <loc>http://leexgreen.github.io/robots.txt</loc>
-        <lastmod>2013-11-10T00:00:02-05:00</lastmod>
+        <loc>http://LeeXGreen.github.io/</loc>
+        <lastmod>2013-11-10T14:05:55-05:00</lastmod>
     </url>
 </urlset>

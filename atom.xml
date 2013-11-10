@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Lee Green]]></title>
-  <link href="http://leexgreen.github.io/atom.xml" rel="self"/>
-  <link href="http://leexgreen.github.io/"/>
-  <updated>2013-11-10T13:26:52-05:00</updated>
-  <id>http://leexgreen.github.io/</id>
+  <link href="http://LeeXGreen.github.io/atom.xml" rel="self"/>
+  <link href="http://LeeXGreen.github.io/"/>
+  <updated>2013-11-10T14:26:25-05:00</updated>
+  <id>http://LeeXGreen.github.io/</id>
   <author>
     <name><![CDATA[Lee Green]]></name>
     
