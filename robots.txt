@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: 
+
+Sitemap: http://leexgreen.github.io/sitemap.xml 
