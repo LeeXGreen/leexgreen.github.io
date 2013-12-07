@@ -4,7 +4,7 @@
   <title><![CDATA[Lee Green]]></title>
   <link href="http://LeeXGreen.github.io/atom.xml" rel="self"/>
   <link href="http://LeeXGreen.github.io/"/>
-  <updated>2013-12-07T02:07:03-05:00</updated>
+  <updated>2013-12-07T10:44:16-05:00</updated>
   <id>http://LeeXGreen.github.io/</id>
   <author>
     <name><![CDATA[Lee Green]]></name>
@@ -28,12 +28,7 @@ a minor invocation error causes it to spew 3-byte files all over your working di
 <pre><code>find . -size 3 | xargs rm
 </code></pre>
 
-<p>&hellip; Right?</p>
-
-<!-- more -->
-
-
-<p> Wrong. From the man page:</p>
+<p>&hellip; Right? Wrong. From the man page:</p>
 
 <pre><code>  -size n[cwbkMG]
       File uses n units of space.  The following suffixes can be used:

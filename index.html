@@ -117,14 +117,53 @@ a minor invocation error causes it to spew 3-byte files all over your working di
 <pre><code>find . -size 3 | xargs rm
 </code></pre>
 
-<p>&hellip; Right?</p>
+<p>&hellip; Right? Wrong. From the man page:</p>
 
+<pre><code>  -size n[cwbkMG]
+      File uses n units of space.  The following suffixes can be used:
+
+      ‘b’    for 512-byte blocks (this is the default if no suffix is used)
+      ‘c’    for bytes
+</code></pre>
+
+<p>Of course, this is the case for most *nix and OS X machines. Hope all those 1500-byte files
+were under version control!</p>
+
+<h2>Get to the point!</h2>
+
+<p>I&rsquo;m not here to issue a screed against find &mdash; the 512-byte block is
+a longstanding default, and you can&rsquo;t always change your public interface &mdash;
+but to make the point: <strong>know your tools, and skip the shortcuts.</strong></p>
+
+<p>Sometimes, with technology, we have a tendency to take shortcuts, to act first and think
+second. One <em>very personally relevant</em> example is piping a find command
+directly to xargs/rm, rather than checking the output first. Another one is running
+a command with a wildcard, without first checking the evaluation of that wildcard.</p>
+
+<p>These practices are especially dangerous for sysadmins, but we all can fall prey to the
+temptation of the easy way.</p>
+
+<h2>Other posts</h2>
+
+<p>I&rsquo;ve read a few posts recently that highlight similarly dangerous practices:</p>
+
+<p><a href="http://blog.existentialize.com/dont-pipe-to-your-shell.html">Don&rsquo;t Pipe to your Shell</a></p>
+
+<p>This one seems like common sense, but the author&rsquo;s right: this pattern is simply <em>everywhere</em>.
+His experiment with netcat leaves out a couple of details (like the fact that most HTTP servers are going to send a Content-Length header), but his point is spot on.</p>
+
+<p><a href="http://thejh.net/misc/website-terminal-copy-paste">Copy-Paste from Website to Terminal</a></p>
+
+<p>This one is especially devious! I think most people&rsquo;s answer to this will be to copy/paste
+into an editor. This is all well and good, unless you use vi and the attacker knows it ;)</p>
+
+<h2>P.S.</h2>
+
+<p>The shameful part about this first post is that, once upon a time, I knew very well that
+512-byte blocks were the default for find. But, because I got so used to specifying a filesize
+in kilobytes (or more), I let myself get tempted into a shortcut.</p>
 </div>
   
-  
-    <footer>
-      <a rel="full-article" href="/blog/2013/12/07/a-shameful-first-post/">Read on &rarr;</a>
-    </footer>
   
 
 
@@ -219,15 +258,6 @@ a minor invocation error causes it to spew 3-byte files all over your working di
 </script>
 
 
-
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) {return;}
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
 
 
 
