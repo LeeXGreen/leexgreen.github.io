@@ -4,7 +4,7 @@
   <title><![CDATA[Lee Green]]></title>
   <link href="http://LeeXGreen.github.io/atom.xml" rel="self"/>
   <link href="http://LeeXGreen.github.io/"/>
-  <updated>2013-12-07T00:45:47-05:00</updated>
+  <updated>2013-12-07T00:50:06-05:00</updated>
   <id>http://LeeXGreen.github.io/</id>
   <author>
     <name><![CDATA[Lee Green]]></name>
@@ -12,32 +12,5 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
-  
-  <entry>
-    <title type="html"><![CDATA[A shameful first post, or: know your tools]]></title>
-    <link href="http://LeeXGreen.github.io/blog/2013/11/19/a-shameful-first-post/"/>
-    <updated>2013-11-19T01:08:00-05:00</updated>
-    <id>http://LeeXGreen.github.io/blog/2013/11/19/a-shameful-first-post</id>
-    <content type="html"><![CDATA[<p>So there you are, deep in the zone, cranking away on your $project. You run your $data_maker, and your minor invocation error causes it to spew 3-byte files all over your working directory. <strong>Ugh.</strong></p>
-
-<p>Well, no problem, that&rsquo;s what find is for, right?</p>
-
-<pre><code>find . -size 3 | xargs rm
-</code></pre>
-
-<p>&hellip; Right? Wrong. From the man page:</p>
-
-<pre><code>  -size n[cwbkMG]
-      File uses n units of space.  The following suffixes can be used:
-
-      ‘b’    for 512-byte blocks (this is the default if no suffix is used)
-      ‘c’    for bytes
-</code></pre>
-
-<p>Of course, this is the case for most *nix and OS X machines. My point here is not to issue a screed against find (the 512-byte default is a longstanding default, and you can&rsquo;t change your public interface), but to make the point: <strong>know your tools.</strong></p>
-
-<p>The shameful part here is that, once upon a time, I knew that 512-byte blocks were the default. But, because one usually specifies a filesize in kilobytes (or more), I forgot it.</p>
-]]></content>
-  </entry>
   
 </feed>
