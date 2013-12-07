@@ -16,11 +16,7 @@ Well, no problem, that's what find is for, right?
 
 	find . -size 3 | xargs rm
 
-... Right?
-
-<!-- more -->
-
- Wrong. From the man page:
+... Right? Wrong. From the man page:
 
       -size n[cwbkMG]
           File uses n units of space.  The following suffixes can be used:
