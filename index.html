@@ -9,7 +9,7 @@
   <meta name="author" content="Lee Green">
 
   
-  <meta name="description" content="Blog Archives Recent Posts GitHub Repos Status updating&#8230; @LeeXGreen on GitHub $.domReady(function(){ if (!window.jXHR){ var jxhr = document. &hellip;">
+  <meta name="description" content="So there you are, deep in the zone, cranking away on your $project. You run your $data_maker, and your minor invocation error causes it to spew 3- &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -21,6 +21,7 @@
   <link rel="canonical" href="http://LeeXGreen.github.io/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href='//fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
   <script src="/javascripts/modernizr-2.0.js"></script>
   <script src="/javascripts/ender.js"></script>
   <script src="/javascripts/octopress.js" type="text/javascript"></script>
@@ -77,6 +78,60 @@
       <div class="blog-index">
   
   
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/11/19/a-shameful-first-post/">A Shameful First Post, or: Know Your Tools</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-11-19T01:08:00-05:00" pubdate data-updated="true">Nov 19<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>So there you are, deep in the zone, cranking away on your $project. You run your $data_maker, and your minor invocation error causes it to spew 3-byte files all over your working directory. <strong>Ugh.</strong></p>
+
+<p>Well, no problem, that&rsquo;s what find is for, right?</p>
+
+<pre><code>find . -size 3 | xargs rm
+</code></pre>
+
+<p>&hellip; Right? Wrong. From the man page:</p>
+
+<pre><code>  -size n[cwbkMG]
+      File uses n units of space.  The following suffixes can be used:
+
+      ‘b’    for 512-byte blocks (this is the default if no suffix is used)
+      ‘c’    for bytes
+</code></pre>
+
+<p>Of course, this is the case for most *nix and OS X machines. My point here is not to issue a screed against find (the 512-byte default is a longstanding default, and you can&rsquo;t change your public interface), but to make the point: <strong>know your tools.</strong></p>
+
+<p>The shameful part here is that, once upon a time, I knew that 512-byte blocks were the default. But, because one usually specifies a filesize in kilobytes (or more), I forgot it.</p>
+</div>
+  
+  
+
+
+    </article>
+  
   <div class="pagination">
     
     <a href="/blog/archives">Blog Archives</a>
@@ -88,6 +143,10 @@
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/11/19/a-shameful-first-post/">A shameful first post, or: know your tools</a>
+      </li>
     
   </ul>
 </section>
@@ -120,6 +179,7 @@
   </script>
   <script src="/javascripts/github.js" type="text/javascript"> </script>
 </section>
+
 
 
 
