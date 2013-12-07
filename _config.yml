@@ -97,7 +97,7 @@ disqus_show_comment_count: false
 google_analytics_tracking_id: 'UA-45604507-1'
 
 # Facebook Like
-facebook_like: true
+facebook_like: false
 
 # Mailchimp sign up
 mailchimp: false
