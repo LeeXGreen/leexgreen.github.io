@@ -10,7 +10,7 @@ sidebar: collapse
 <img class="right"src="{{ root_url}}/images/me.jpg" width=160 height=160>
 
 I'm an American (15 years in Texas), currently living in Montreal, Canada.<br>
-I'm a Senior Software Developer at [TouchTunes](http://www.touchtunes.com/).
+I work as a Senior Software Developer at [TouchTunes](http://www.touchtunes.com/).
 
 Check out my <a href="{{ root_url }}/me/cv.pdf">CV</a>, [GitHub](https://github.com/LeeXGreen) or [LinkedIn](https://www.linkedin.com/in/leexgreen) if you're so inclined.
 
