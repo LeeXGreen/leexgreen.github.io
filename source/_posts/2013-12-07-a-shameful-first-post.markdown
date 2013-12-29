@@ -45,12 +45,12 @@ Other posts
 --
 I've read a few posts recently that highlight similarly dangerous practices:
 
-[Don't Pipe to your Shell](http://blog.existentialize.com/dont-pipe-to-your-shell.html)
+[Don't Pipe to your Shell](http://blog.existentialize.com/dont-pipe-to-your-shell.html) -- [HN thread](https://news.ycombinator.com/item?id=6650987)
 
 This one seems like common sense, but the author's right: this pattern is simply *everywhere*.
 His experiment with netcat leaves out a couple of details (like the fact that most HTTP servers are going to send a Content-Length header), but his point is spot on.
 
-[Copy-Paste from Website to Terminal](http://thejh.net/misc/website-terminal-copy-paste)
+[Copy-Paste from Website to Terminal](http://thejh.net/misc/website-terminal-copy-paste) -- [HN thread](https://news.ycombinator.com/item?id=5508225)
 
 This one is especially devious! I think most people's answer to this will be to copy/paste
 into an editor. This is all well and good, unless you use vi and the attacker knows it ;)
