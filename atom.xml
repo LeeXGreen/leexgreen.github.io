@@ -4,7 +4,7 @@
   <title><![CDATA[Lee Green]]></title>
   <link href="http://LeeXGreen.github.io/atom.xml" rel="self"/>
   <link href="http://LeeXGreen.github.io/"/>
-  <updated>2013-12-28T22:59:18-05:00</updated>
+  <updated>2013-12-30T02:29:47-05:00</updated>
   <id>http://LeeXGreen.github.io/</id>
   <author>
     <name><![CDATA[Lee Green]]></name>
@@ -12,6 +12,123 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA['Learn to Code'?]]></title>
+    <link href="http://LeeXGreen.github.io/blog/2013/12/29/learn-to-code/"/>
+    <updated>2013-12-29T14:54:00-05:00</updated>
+    <id>http://LeeXGreen.github.io/blog/2013/12/29/learn-to-code</id>
+    <content type="html"><![CDATA[<p>I was playing around with <a href="http://www.google.ca/trends/explore#q=%22learn%20to%20code%22%2C%20%22learn%20programming%22&amp;cmpt=q">Google Trends</a> the other day, and I discovered something interesting for the terms &ldquo;learn programming&rdquo; and &ldquo;learn to code&rdquo;.<br/>
+<a href="http://www.google.ca/trends/explore#q=%22learn%20to%20code%22%2C%20%22learn%20programming%22&cmpt=q">
+  <img src="http://LeeXGreen.github.io/images/search_graph.png" width="443" height="207">
+</a></p>
+
+<p>Search volume for both terms has been going up over time since about 2007.
+Interest in &ldquo;programming&rdquo; was actually <em>higher</em> before this, so we&rsquo;re seeing &ldquo;code&rdquo; replace it, to some degree.</p>
+
+<p>This makes sense &mdash; &ldquo;coding&rdquo; is sexier than &ldquo;programming&rdquo;; it&rsquo;s less dusty, more headline-friendly.</p>
+
+<p>What I find most interesting, though, is not why this happens, but <em>how</em> it happens &mdash; every time &ldquo;code&rdquo; spikes, search volume for &ldquo;code&rdquo; goes up, and stays up.</p>
+
+<p>The first spike is from January 2012, when <a href="http://www.codeacademy.com">Codeacademy</a> started their first &ldquo;Code Year&rdquo; push.</p>
+
+<p>The second spike is from March 2013, when <a href="http://www.code.org">code.org</a> released some &lsquo;Learn to Code&rsquo; videos featuring all sorts of top tech names &mdash; and Chris Bosh. <em>Of course.</em></p>
+
+<h3>Context</h3>
+
+<p>I&rsquo;ve been thinking about this for a while, but my inspiration for writing it up was <a href="http://www.ultrasaurus.com/2013/12/code-computer-science/">code != computer science</a> by Sarah Allen.
+She said most of this better than I will, so I urge you to read it.</p>
+
+<h2>Should you learn to code?</h2>
+
+<p>I think the answer here is unequivocally yes, if you have the free time and desire to do so.
+We all rely on technology and software to an incredible degree.
+The type of logical thinking required to design, implement, and troubleshoot programs and algorithms can be applied to many other tasks.</p>
+
+<h3>What sort of resources are available?</h3>
+
+<h4>Free / inexpensive</h4>
+
+<p>These include videos, classes (formal and informal), and ebooks, as well as websites and blogs.
+One great aggregator of free content is <a href="http://www.bentobox.io/">Bento</a> &mdash; they have links to popular tutorials for almost anything!</p>
+
+<p>I&rsquo;m working on a free class myself &mdash; keep an eye on this blog for more info.</p>
+
+<h4>Subscription</h4>
+
+<p>One example here is <a href="https://teamtreehouse.com">Treehouse</a>. They offer a $25 and a $49 plan, with varying features &mdash; both include extensive amounts of videos.</p>
+
+<h4>&ldquo;Bootcamps&rdquo;</h4>
+
+<p>These are expensive (anywhere from $4k to $12k or more), and very intense. They typically run for 8-12 weeks, and are basically a full-time job in terms of workload.</p>
+
+<h3>Check your privilege!</h3>
+
+<p>Look: I have a computer engineering degree, and I&rsquo;ve been working professionally on software since 2004.
+It&rsquo;s no surprise that I think my degree was worth the money and time, if only because of the time period dedicated to learning.</p>
+
+<p>But even I agree that a CS degree is by no means a requirement to be a successful software developer &mdash; especially in 2013, with all the resources that are now available.</p>
+
+<h3>Be realistic</h3>
+
+<p>That said, I can&rsquo;t help but feel that maybe some people are putting too much faith in how &lsquo;Learn to Code&rsquo; will change their lives.
+It feels a little predatory:</p>
+
+<p>&ldquo;You can earn up to $100k as a Coder!&rdquo;</p>
+
+<p>Well, okay, yes, it&rsquo;s <em>possible</em>, but it takes serious work to develop those sorts of skills and knowledge.
+No matter how hard you work, you can&rsquo;t become an expert overnight, or even in three months.
+And if you need to hold down your existing job to take care of your family, your options are even more limited.</p>
+
+<h3>Stay humble</h3>
+
+<p>Make sure, as you&rsquo;re learning about programming, that you try to keep track of the things you <em>don&rsquo;t</em> know.
+Most people love working with someone who is aware of their limitations and truly wants to learn.</p>
+
+<h3>Have a goal</h3>
+
+<p>It doesn&rsquo;t really work to learn to code simply so you <em>can</em>.
+You need something to work towards, something you&rsquo;d like to accomplish, something you&rsquo;d like to build.</p>
+
+<p>It helps to start small &mdash; maybe you just want a simple webpage with your toddler&rsquo;s 10 current favorite YouTube videos.</p>
+
+<h2>Advice</h2>
+
+<p>The takeaway here depends on who you are and what you want to get out of &lsquo;learning to code&rsquo;:</p>
+
+<h4>Students</h4>
+
+<ul>
+<li>If you&rsquo;re still in school, I&rsquo;d urge you to learn more about computers and coding, even if you have to do it on your own.</li>
+<li>If you&rsquo;re working toward a computer degree, make sure you supplement it with other coding experience &mdash; whether it&rsquo;s part-time employment, open source, or simply hacking on your own projects.</li>
+</ul>
+
+
+<h4>Non-tech people who work with techies</h4>
+
+<ul>
+<li>Learning to code will help you at work. Ask someone for a list of technologies you use and try to learn more about those, or about related topics.</li>
+<li>Be realistic about what you know &mdash; never assume that you can estimate how long a task will take without knowing the details!</li>
+</ul>
+
+
+<h4>Junior developers</h4>
+
+<ul>
+<li>A rising tide lifts all boats &mdash; if you let it. Make sure you take advantage of all the resources you have available. The guy who wants your job certainly will.</li>
+</ul>
+
+
+<h4>Senior developers</h4>
+
+<ul>
+<li>Make sure you promote best principles and practices to the junior developers on your team.</li>
+<li>Work on your teaching / presenting skills &mdash; you may soon find you&rsquo;re the only one on your team with a CS degree, and your team will benefit from your knowledge.</li>
+<li>Make sure you don&rsquo;t slack on your continuing education either &mdash; technology evolves quickly, and you have to stay ahead.</li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[A shameful first post]]></title>
@@ -40,7 +157,7 @@ a minor invocation error causes it to spew 3-byte files all over your working di
 <p>Of course, this is the case for most *nix and OS X machines. Hope all those 1500-byte files
 were under version control!</p>
 
-<h2>Get to the point!</h2>
+<h3>Get to the point!</h3>
 
 <p>I&rsquo;m not here to issue a screed against find &mdash; the 512-byte block is
 a longstanding default, and you can&rsquo;t always change your public interface &mdash;
@@ -54,7 +171,7 @@ a command with a wildcard, without first checking the evaluation of that wildcar
 <p>These practices are especially dangerous for sysadmins, but we all can fall prey to the
 temptation of the easy way.</p>
 
-<h2>Other posts</h2>
+<h3>Other posts</h3>
 
 <p>I&rsquo;ve read a few posts recently that highlight similarly dangerous practices:</p>
 
@@ -68,7 +185,7 @@ His experiment with netcat leaves out a couple of details (like the fact that mo
 <p>This one is especially devious! I think most people&rsquo;s answer to this will be to copy/paste
 into an editor. This is all well and good, unless you use vi and the attacker knows it ;)</p>
 
-<h2>P.S.</h2>
+<h3>P.S.</h3>
 
 <p>The shameful part about this first post is that, once upon a time, I knew very well that
 512-byte blocks were the default for find. But, because I got so used to specifying a filesize
