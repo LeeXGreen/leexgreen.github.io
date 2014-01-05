@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Software | Lee Green]]></title>
   <link href="http://LeeXGreen.github.io/blog/categories/software/atom.xml" rel="self"/>
   <link href="http://LeeXGreen.github.io/"/>
-  <updated>2013-12-30T02:29:47-05:00</updated>
+  <updated>2014-01-05T17:02:50-05:00</updated>
   <id>http://LeeXGreen.github.io/</id>
   <author>
     <name><![CDATA[Lee Green]]></name>
@@ -12,6 +12,122 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Nitrous.io : Collaborate in the cloud]]></title>
+    <link href="http://LeeXGreen.github.io/blog/2014/01/04/nitrous-dot-io-collaboration-in-the-cloud/"/>
+    <updated>2014-01-04T12:28:00-05:00</updated>
+    <id>http://LeeXGreen.github.io/blog/2014/01/04/nitrous-dot-io-collaboration-in-the-cloud</id>
+    <content type="html"><![CDATA[<p>Over the past few months, I&rsquo;ve been helping some friends learn more about software development,
+working in Ruby and (eventually) covering most of the web stack.
+In this post, I&rsquo;ll talk a little about the tools we&rsquo;ve used to collaborate online, and about the one we&rsquo;ve been using most: <a href="https://www.nitrous.io/join/cs43HaW_jfc">Nitrous.io</a>.</p>
+
+<h3>GitHub (and native apps)</h3>
+
+<p>We started with Git and GitHub, not just for version control, but because I&rsquo;m publishing any
+support material as a public repo. <sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup></p>
+
+<p>I&rsquo;m always amazed by the work GitHub is doing to make Git more accessible.
+The web interface is great, of course, but they&rsquo;ve also released native apps that are very solid.</p>
+
+<p>Personally, I still use the command line for all of my committing/pulling/pushing.
+A graphical app can be really nice for viewing history graphs or diffs, though &mdash;
+I like the OS X version almost as much as my old standby <a href="http://gitx.org/">GitX</a>.</p>
+
+<h3>Virtual Machines with Vagrant</h3>
+
+<p>Since most of my friends were running Windows, I knew we needed some sort of virtualized solution.
+I didn&rsquo;t want to have to troubleshoot software installations on Windows,
+and we definitely needed to isolate our work from their day-to-day OS.</p>
+
+<p>Given that I&rsquo;m seriously addicted to using <a href="http://www.vagrantup.com">Vagrant</a> at my day job,
+I included descriptors for a couple of boxes within the course repository.
+Just basic provisioning &mdash; sharing folders from the host, installing Ruby and gems, etc.</p>
+
+<p>This worked pretty well.
+Once you have VirtualBox and Vagrant installed, it&rsquo;s just &ldquo;git clone; vagrant up&rdquo;,
+and I could be sure that my friends' VMs were properly configured and reproducible.</p>
+
+<h3>Shortcomings</h3>
+
+<p>We worked with this format for a couple of weeks, collaborating using Skype, or Google Hangouts.
+The screen sharing on Hangouts is free, but to share a screen with Skype, you need Skype Premium.
+On either service, of course, it&rsquo;s view-only &mdash; you can&rsquo;t affect your partner&rsquo;s screen at all.</p>
+
+<p>Now, I&rsquo;m used to pair programming using screen, so for me this was less than ideal.
+However, I didn&rsquo;t want to ask my friends to mess around with
+forwarding ports, SSH connections, and so on.</p>
+
+<p>And besides, what editor could we use?<br/>
+Certainly not vim or emacs, at least at first!</p>
+
+<h1>Enter Nitrous.io</h1>
+
+<p>They provide pre-provisioned VMs (well, LXC containers) that run at EC2,
+which you can access in multiple ways:</p>
+
+<ul>
+<li>a Web IDE</li>
+<li>a Console in your browser</li>
+<li>SSH access using your preferred client</li>
+</ul>
+
+
+<p>Each box is given its own (long, semi-cryptic) hostname, and a handful of forwarded ports,
+so you can easily expose whatever apps / services you like.</p>
+
+<p>They currently provide four flavors of VM: Ruby/Rails, Python/Django, NodeJS, and Go.
+If you need something not listed here, you should usually able to install it from source,
+as long as you don&rsquo;t require root access.</p>
+
+<h3>Completely Free Plan</h3>
+
+<p>They do offer a full-featured free plan (not a trial!), with which I&rsquo;m quite happy so far.
+I would note that <strong>the free plan isn&rsquo;t suitable for long-running services</strong>,
+as free boxes can be shut down for inactivity.
+If you want to spend money, you&rsquo;ll not only be able to create multiple boxes with more RAM and disk,
+but all paid plans get more virtual memory, greater CPU share, and paid boxes are never shut down.</p>
+
+<h3>Awesome Collab Mode</h3>
+
+<p>Being able to write and execute code in your browser is pretty great,
+but for me the killer component of Nitrous.io is the collaboration features.
+You can invite other users to be collaborators on a per-box basis,
+which I should note does allow them <strong>full access</strong> to your box.</p>
+
+<p>Once you&rsquo;re both in the Web IDE, if you enable &ldquo;Collab Mode&rdquo; on a file,
+you begin work on a shared copy where each one of you can see the other one&rsquo;s cursor and selection.
+This actually goes one step beyond {screen,tmux}-style sharing,
+since each of you can work on different sections of the same file at the same time.</p>
+
+<p>If you&rsquo;re working with someone who&rsquo;s also a command line whiz, you can just use a full-screen console and screen / tmux / vim / emacs &mdash; they&rsquo;re all installed already.</p>
+
+<h3>Autoparts</h3>
+
+<p>When I first started working with Nitrous.io,
+their biggest weakness was the difficulty of installing external software on boxes.
+If what you needed was lightweight, you could usually build it from source, but things like,
+say, a database server were a little more difficult.</p>
+
+<p>This all changed in September when they introduced <a href="http://blog.nitrous.io/2013/09/18/introducing-autoparts-for-nitrous-io.html">Autoparts</a> &mdash;
+an open-source package manager specifically for Nitrous.io boxes.
+It installs everything needed within your home directory, since you don&rsquo;t have root access.
+It includes support for MySQL, PostgreSQL, Redis, Memcached, and MongoDB, as well as many other packages &mdash; see <a href="https://github.com/action-io/autoparts/tree/master/lib/autoparts/packages">GitHub</a> for a full list.</p>
+
+<h1><a href="https://www.nitrous.io/join/cs43HaW_jfc">Sign Up</a></h1>
+
+<p>If this sounds useful to you, sign up via the above link and we&rsquo;ll both get more &ldquo;N2O&rdquo; (Nitrous.io currency) each month.<br/>
+Once you&rsquo;ve signed up, feel free to post your referral link in the comments &mdash; I&rsquo;ll replace my link with someone else&rsquo;s once I&rsquo;ve gotten a few signups.</p>
+<div class="footnotes">
+<hr/>
+<ol>
+<li id="fn:1">
+<p><a href="https://github.com/LeeXGreen/sep2013/">The class repo</a> &mdash; still a work in progress.<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
+</ol>
+</div>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA['Learn to Code'?]]></title>
