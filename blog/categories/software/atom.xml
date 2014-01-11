@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Software | Lee Green]]></title>
   <link href="http://LeeXGreen.github.io/blog/categories/software/atom.xml" rel="self"/>
   <link href="http://LeeXGreen.github.io/"/>
-  <updated>2014-01-05T17:02:50-05:00</updated>
+  <updated>2014-01-10T21:56:02-05:00</updated>
   <id>http://LeeXGreen.github.io/</id>
   <author>
     <name><![CDATA[Lee Green]]></name>
@@ -21,6 +21,9 @@
     <content type="html"><![CDATA[<p>Over the past few months, I&rsquo;ve been helping some friends learn more about software development,
 working in Ruby and (eventually) covering most of the web stack.
 In this post, I&rsquo;ll talk a little about the tools we&rsquo;ve used to collaborate online, and about the one we&rsquo;ve been using most: <a href="https://www.nitrous.io/join/cs43HaW_jfc">Nitrous.io</a>.</p>
+
+<!-- more -->
+
 
 <h3>GitHub (and native apps)</h3>
 
@@ -138,6 +141,11 @@ Once you&rsquo;ve signed up, feel free to post your referral link in the comment
 <a href="http://www.google.ca/trends/explore#q=%22learn%20to%20code%22%2C%20%22learn%20programming%22&cmpt=q">
   <img src="/images/search_graph.png" width="443" height="207">
 </a></p>
+
+<p>Look at those spikes!</p>
+
+<!-- more -->
+
 
 <p>Search volume for both terms has been going up over time since about 2007.
 Interest in &ldquo;programming&rdquo; was actually <em>higher</em> before this, so we&rsquo;re seeing &ldquo;code&rdquo; replace it, to some degree.</p>

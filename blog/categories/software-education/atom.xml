@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Software Education | Lee Green]]></title>
   <link href="http://LeeXGreen.github.io/blog/categories/software-education/atom.xml" rel="self"/>
   <link href="http://LeeXGreen.github.io/"/>
-  <updated>2014-01-05T17:02:50-05:00</updated>
+  <updated>2014-01-10T21:56:02-05:00</updated>
   <id>http://LeeXGreen.github.io/</id>
   <author>
     <name><![CDATA[Lee Green]]></name>
@@ -21,6 +21,9 @@
     <content type="html"><![CDATA[<p>Over the past few months, I&rsquo;ve been helping some friends learn more about software development,
 working in Ruby and (eventually) covering most of the web stack.
 In this post, I&rsquo;ll talk a little about the tools we&rsquo;ve used to collaborate online, and about the one we&rsquo;ve been using most: <a href="https://www.nitrous.io/join/cs43HaW_jfc">Nitrous.io</a>.</p>
+
+<!-- more -->
+
 
 <h3>GitHub (and native apps)</h3>
 

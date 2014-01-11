@@ -47,7 +47,7 @@ working in Ruby and (eventually) covering most &hellip;">
 
 </head>
 
-<body   >
+<body    class="collapse-sidebar sidebar-footer" >
   <header role="banner"><hgroup>
   <h1><a href="/">Lee Green</a></h1>
   
@@ -112,112 +112,12 @@ working in Ruby and (eventually) covering most &hellip;">
 working in Ruby and (eventually) covering most of the web stack.
 In this post, I&rsquo;ll talk a little about the tools we&rsquo;ve used to collaborate online, and about the one we&rsquo;ve been using most: <a href="https://www.nitrous.io/join/cs43HaW_jfc">Nitrous.io</a>.</p>
 
-<h3>GitHub (and native apps)</h3>
-
-<p>We started with Git and GitHub, not just for version control, but because I&rsquo;m publishing any
-support material as a public repo. <sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup></p>
-
-<p>I&rsquo;m always amazed by the work GitHub is doing to make Git more accessible.
-The web interface is great, of course, but they&rsquo;ve also released native apps that are very solid.</p>
-
-<p>Personally, I still use the command line for all of my committing/pulling/pushing.
-A graphical app can be really nice for viewing history graphs or diffs, though &mdash;
-I like the OS X version almost as much as my old standby <a href="http://gitx.org/">GitX</a>.</p>
-
-<h3>Virtual Machines with Vagrant</h3>
-
-<p>Since most of my friends were running Windows, I knew we needed some sort of virtualized solution.
-I didn&rsquo;t want to have to troubleshoot software installations on Windows,
-and we definitely needed to isolate our work from their day-to-day OS.</p>
-
-<p>Given that I&rsquo;m seriously addicted to using <a href="http://www.vagrantup.com">Vagrant</a> at my day job,
-I included descriptors for a couple of boxes within the course repository.
-Just basic provisioning &mdash; sharing folders from the host, installing Ruby and gems, etc.</p>
-
-<p>This worked pretty well.
-Once you have VirtualBox and Vagrant installed, it&rsquo;s just &ldquo;git clone; vagrant up&rdquo;,
-and I could be sure that my friends&#8217; VMs were properly configured and reproducible.</p>
-
-<h3>Shortcomings</h3>
-
-<p>We worked with this format for a couple of weeks, collaborating using Skype, or Google Hangouts.
-The screen sharing on Hangouts is free, but to share a screen with Skype, you need Skype Premium.
-On either service, of course, it&rsquo;s view-only &mdash; you can&rsquo;t affect your partner&rsquo;s screen at all.</p>
-
-<p>Now, I&rsquo;m used to pair programming using screen, so for me this was less than ideal.
-However, I didn&rsquo;t want to ask my friends to mess around with
-forwarding ports, SSH connections, and so on.</p>
-
-<p>And besides, what editor could we use?<br/>
-Certainly not vim or emacs, at least at first!</p>
-
-<h1>Enter Nitrous.io</h1>
-
-<p>They provide pre-provisioned VMs (well, LXC containers) that run at EC2,
-which you can access in multiple ways:</p>
-
-<ul>
-<li>a Web IDE</li>
-<li>a Console in your browser</li>
-<li>SSH access using your preferred client</li>
-</ul>
-
-
-<p>Each box is given its own (long, semi-cryptic) hostname, and a handful of forwarded ports,
-so you can easily expose whatever apps / services you like.</p>
-
-<p>They currently provide four flavors of VM: Ruby/Rails, Python/Django, NodeJS, and Go.
-If you need something not listed here, you should usually able to install it from source,
-as long as you don&rsquo;t require root access.</p>
-
-<h3>Completely Free Plan</h3>
-
-<p>They do offer a full-featured free plan (not a trial!), with which I&rsquo;m quite happy so far.
-I would note that <strong>the free plan isn&rsquo;t suitable for long-running services</strong>,
-as free boxes can be shut down for inactivity.
-If you want to spend money, you&rsquo;ll not only be able to create multiple boxes with more RAM and disk,
-but all paid plans get more virtual memory, greater CPU share, and paid boxes are never shut down.</p>
-
-<h3>Awesome Collab Mode</h3>
-
-<p>Being able to write and execute code in your browser is pretty great,
-but for me the killer component of Nitrous.io is the collaboration features.
-You can invite other users to be collaborators on a per-box basis,
-which I should note does allow them <strong>full access</strong> to your box.</p>
-
-<p>Once you&rsquo;re both in the Web IDE, if you enable &ldquo;Collab Mode&rdquo; on a file,
-you begin work on a shared copy where each one of you can see the other one&rsquo;s cursor and selection.
-This actually goes one step beyond {screen,tmux}-style sharing,
-since each of you can work on different sections of the same file at the same time.</p>
-
-<p>If you&rsquo;re working with someone who&rsquo;s also a command line whiz, you can just use a full-screen console and screen / tmux / vim / emacs &mdash; they&rsquo;re all installed already.</p>
-
-<h3>Autoparts</h3>
-
-<p>When I first started working with Nitrous.io,
-their biggest weakness was the difficulty of installing external software on boxes.
-If what you needed was lightweight, you could usually build it from source, but things like,
-say, a database server were a little more difficult.</p>
-
-<p>This all changed in September when they introduced <a href="http://blog.nitrous.io/2013/09/18/introducing-autoparts-for-nitrous-io.html">Autoparts</a> &mdash;
-an open-source package manager specifically for Nitrous.io boxes.
-It installs everything needed within your home directory, since you don&rsquo;t have root access.
-It includes support for MySQL, PostgreSQL, Redis, Memcached, and MongoDB, as well as many other packages &mdash; see <a href="https://github.com/action-io/autoparts/tree/master/lib/autoparts/packages">GitHub</a> for a full list.</p>
-
-<h1><a href="https://www.nitrous.io/join/cs43HaW_jfc">Sign Up</a></h1>
-
-<p>If this sounds useful to you, sign up via the above link and we&rsquo;ll both get more &ldquo;N2O&rdquo; (Nitrous.io currency) each month.<br/>
-Once you&rsquo;ve signed up, feel free to post your referral link in the comments &mdash; I&rsquo;ll replace my link with someone else&rsquo;s once I&rsquo;ve gotten a few signups.</p>
-<div class="footnotes">
-<hr/>
-<ol>
-<li id="fn:1">
-<p><a href="https://github.com/LeeXGreen/sep2013/">The class repo</a> &mdash; still a work in progress.<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
-</ol>
-</div>
-
 </div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/2014/01/04/nitrous-dot-io-collaboration-in-the-cloud/">Read on &rarr;</a>
+    </footer>
   
 
 
@@ -256,112 +156,14 @@ Once you&rsquo;ve signed up, feel free to post your referral link in the comment
   <img src="/images/search_graph.png" width="443" height="207">
 </a></p>
 
-<p>Search volume for both terms has been going up over time since about 2007.
-Interest in &ldquo;programming&rdquo; was actually <em>higher</em> before this, so we&rsquo;re seeing &ldquo;code&rdquo; replace it, to some degree.</p>
-
-<p>This makes sense &mdash; &ldquo;coding&rdquo; is sexier than &ldquo;programming&rdquo;; it&rsquo;s less dusty, more headline-friendly.</p>
-
-<p>What I find most interesting, though, is not why this happens, but <em>how</em> it happens &mdash; every time &ldquo;code&rdquo; spikes, search volume for &ldquo;code&rdquo; goes up, and stays up.</p>
-
-<p>The first spike is from January 2012, when <a href="http://www.codeacademy.com">Codeacademy</a> started their first &ldquo;Code Year&rdquo; push.</p>
-
-<p>The second spike is from March 2013, when <a href="http://www.code.org">code.org</a> released some &lsquo;Learn to Code&rsquo; videos featuring all sorts of top tech names &mdash; and Chris Bosh. <em>Of course.</em></p>
-
-<h3>Context</h3>
-
-<p>I&rsquo;ve been thinking about this for a while, but my inspiration for writing it up was <a href="http://www.ultrasaurus.com/2013/12/code-computer-science/">code != computer science</a> by Sarah Allen.
-She said most of this better than I will, so I urge you to read it.</p>
-
-<h2>Should you learn to code?</h2>
-
-<p>I think the answer here is unequivocally yes, if you have the free time and desire to do so.
-We all rely on technology and software to an incredible degree.
-The type of logical thinking required to design, implement, and troubleshoot programs and algorithms can be applied to many other tasks.</p>
-
-<h3>What sort of resources are available?</h3>
-
-<h4>Free / inexpensive</h4>
-
-<p>These include videos, classes (formal and informal), and ebooks, as well as websites and blogs.
-One great aggregator of free content is <a href="http://www.bentobox.io/">Bento</a> &mdash; they have links to popular tutorials for almost anything!</p>
-
-<p>I&rsquo;m working on a free class myself &mdash; keep an eye on this blog for more info.</p>
-
-<h4>Subscription</h4>
-
-<p>One example here is <a href="https://teamtreehouse.com">Treehouse</a>. They offer a $25 and a $49 plan, with varying features &mdash; both include extensive amounts of videos.</p>
-
-<h4>&ldquo;Bootcamps&rdquo;</h4>
-
-<p>These are expensive (anywhere from $4k to $12k or more), and very intense. They typically run for 8-12 weeks, and are basically a full-time job in terms of workload.</p>
-
-<h3>Check your privilege!</h3>
-
-<p>Look: I have a computer engineering degree, and I&rsquo;ve been working professionally on software since 2004.
-It&rsquo;s no surprise that I think my degree was worth the money and time, if only because of the time period dedicated to learning.</p>
-
-<p>But even I agree that a CS degree is by no means a requirement to be a successful software developer &mdash; especially in 2013, with all the resources that are now available.</p>
-
-<h3>Be realistic</h3>
-
-<p>That said, I can&rsquo;t help but feel that maybe some people are putting too much faith in how &lsquo;Learn to Code&rsquo; will change their lives.
-It feels a little predatory:</p>
-
-<p>&ldquo;You can earn up to $100k as a Coder!&rdquo;</p>
-
-<p>Well, okay, yes, it&rsquo;s <em>possible</em>, but it takes serious work to develop those sorts of skills and knowledge.
-No matter how hard you work, you can&rsquo;t become an expert overnight, or even in three months.
-And if you need to hold down your existing job to take care of your family, your options are even more limited.</p>
-
-<h3>Stay humble</h3>
-
-<p>Make sure, as you&rsquo;re learning about programming, that you try to keep track of the things you <em>don&rsquo;t</em> know.
-Most people love working with someone who is aware of their limitations and truly wants to learn.</p>
-
-<h3>Have a goal</h3>
-
-<p>It doesn&rsquo;t really work to learn to code simply so you <em>can</em>.
-You need something to work towards, something you&rsquo;d like to accomplish, something you&rsquo;d like to build.</p>
-
-<p>It helps to start small &mdash; maybe you just want a simple webpage with your toddler&rsquo;s 10 current favorite YouTube videos.</p>
-
-<h2>Advice</h2>
-
-<p>The takeaway here depends on who you are and what you want to get out of &lsquo;learning to code&rsquo;:</p>
-
-<h4>Students</h4>
-
-<ul>
-<li>If you&rsquo;re still in school, I&rsquo;d urge you to learn more about computers and coding, even if you have to do it on your own.</li>
-<li>If you&rsquo;re working toward a computer degree, make sure you supplement it with other coding experience &mdash; whether it&rsquo;s part-time employment, open source, or simply hacking on your own projects.</li>
-</ul>
-
-
-<h4>Non-tech people who work with techies</h4>
-
-<ul>
-<li>Learning to code will help you at work. Ask someone for a list of technologies you use and try to learn more about those, or about related topics.</li>
-<li>Be realistic about what you know &mdash; never assume that you can estimate how long a task will take without knowing the details!</li>
-</ul>
-
-
-<h4>Junior developers</h4>
-
-<ul>
-<li>A rising tide lifts all boats &mdash; if you let it. Make sure you take advantage of all the resources you have available. The guy who wants your job certainly will.</li>
-</ul>
-
-
-<h4>Senior developers</h4>
-
-<ul>
-<li>Make sure you promote best principles and practices to the junior developers on your team.</li>
-<li>Work on your teaching / presenting skills &mdash; you may soon find you&rsquo;re the only one on your team with a CS degree, and your team will benefit from your knowledge.</li>
-<li>Make sure you don&rsquo;t slack on your continuing education either &mdash; technology evolves quickly, and you have to stay ahead.</li>
-</ul>
+<p>Look at those spikes!</p>
 
 </div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/2013/12/29/learn-to-code/">Read on &rarr;</a>
+    </footer>
   
 
 
