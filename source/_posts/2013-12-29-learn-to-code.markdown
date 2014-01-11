@@ -11,6 +11,10 @@ I was playing around with [Google Trends](http://www.google.ca/trends/explore#q=
   <img src="{{ root_url }}/images/search_graph.png" width="443" height="207">
 </a>
 
+Look at those spikes!
+
+<!-- more -->
+
 Search volume for both terms has been going up over time since about 2007.
 Interest in "programming" was actually *higher* before this, so we're seeing "code" replace it, to some degree.
 

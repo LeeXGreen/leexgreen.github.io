@@ -10,6 +10,8 @@ Over the past few months, I've been helping some friends learn more about softwa
 working in Ruby and (eventually) covering most of the web stack.
 In this post, I'll talk a little about the tools we've used to collaborate online, and about the one we've been using most: [Nitrous.io](https://www.nitrous.io/join/cs43HaW_jfc).
 
+<!-- more -->
+
 ### GitHub (and native apps)
 
 We started with Git and GitHub, not just for version control, but because I'm publishing any
