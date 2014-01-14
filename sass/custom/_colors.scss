@@ -75,3 +75,13 @@ $footer-border-top: none;
 $footer-link-color: $link-color;
 $footer-link-color-hover: $link-color-hover;
 $page-border-bottom: none;
+
+html {
+    background: $page-bg;
+}
+article {
+    h1, h2, h3, h4, h5, h6
+    {
+        color : $sol_orange;
+    }
+}
