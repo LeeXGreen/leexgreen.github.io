@@ -1,5 +1,6 @@
 $blockquote: $type-border !default;
 $sans: "Montserrat", "Dosis", "Helvetica Neue", Arial, sans-serif !default;
+$body_font: "varela_roundregular", sans-serif !default;
 $serif: "Exo", Georgia, Times, "Times New Roman", serif !default;
 $mono: "Inconsolata", Menlo, Monaco, "Andale Mono", "lucida console", "Courier New", monospace !default;
 $heading-font-family: $sans !default;
@@ -13,6 +14,7 @@ $header-subtitle-font-family: $mono !default;
 .sans { font-family: $sans; }
 .serif { font-family: $serif; }
 .mono { font-family: $mono; }
+.body_font { font-family: $body_font; }
 
 body > header h1 {
   font-size: 2.2em;
@@ -29,7 +31,7 @@ body > header h2 {
 body {
   line-height: 1.5em;
   color: $text-color;
-  @extend .sans;
+  @extend .body_font;
 }
 h1 {
   font-size: 2.2em;
