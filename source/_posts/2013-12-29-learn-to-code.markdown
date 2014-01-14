@@ -3,7 +3,7 @@ layout: post
 title: "'Learn to Code'?"
 date: 2013-12-29 14:54
 comments: true
-categories: [Software]
+categories: ["Software", "Software Education"]
 ---
 
 I was playing around with [Google Trends](http://www.google.ca/trends/explore#q=%22learn%20to%20code%22%2C%20%22learn%20programming%22&cmpt=q) the other day, and I discovered something interesting for the terms "learn programming" and "learn to code".  
