@@ -12,7 +12,7 @@ sidebar: collapse
 I'm an American (15 years in Texas), currently living in Montreal, Canada.<br>
 I work as a Senior Software Developer at [TouchTunes](http://www.touchtunes.com/).
 
-Check out my <a href="{{ root_url }}/me/cv.pdf">CV</a>, [GitHub](https://github.com/LeeXGreen) or [LinkedIn](https://www.linkedin.com/in/leexgreen) if you're so inclined.
+Check out my [GitHub](https://github.com/LeeXGreen) or [LinkedIn](https://www.linkedin.com/in/leexgreen) if you're so inclined.
 
 Cool things I've done (that I can talk about):
 
