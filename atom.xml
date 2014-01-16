@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Lee Green]]></title>
-  <link href="http://LeeXGreen.github.io/atom.xml" rel="self"/>
-  <link href="http://LeeXGreen.github.io/"/>
-  <updated>2014-01-15T14:00:08-05:00</updated>
-  <id>http://LeeXGreen.github.io/</id>
+  <link href="http://lee.greens.io/atom.xml" rel="self"/>
+  <link href="http://lee.greens.io/"/>
+  <updated>2014-01-15T21:32:23-05:00</updated>
+  <id>http://lee.greens.io/</id>
   <author>
     <name><![CDATA[Lee Green]]></name>
     
@@ -14,10 +14,106 @@
 
   
   <entry>
+    <title type="html"><![CDATA[Windows Chrome, why do my fonts look so bad?]]></title>
+    <link href="http://lee.greens.io/blog/2014/01/13/windows-chrome/"/>
+    <updated>2014-01-13T23:50:00-05:00</updated>
+    <id>http://lee.greens.io/blog/2014/01/13/windows-chrome</id>
+    <content type="html"><![CDATA[<p>Anyone who knows me will tell you that I don&rsquo;t exactly have great fashion sense.
+I don&rsquo;t wear bespoke suits. Our house is not &ldquo;exquisitely decorated&rdquo;, or &ldquo;tastefully appointed&rdquo;.
+I focus more on the practical than the aesthetic.
+That said, when I started this blog, I knew I couldn&rsquo;t leave it looking like every other
+Octopress blog (you know, like <a href="http://lee.greens.io/images/vanilla_octopress.png">this</a>).</p>
+
+<h3>Easy tweaks</h3>
+
+<p>I started (and finished) with the low-hanging fruit &mdash; colors and fonts.</p>
+
+<p>The color scheme was easy &mdash;
+only the best color scheme ever, <a href="http://ethanschoonover.com/solarized">Solarized</a>.
+My iTerm is Solarized dark, my graphical Vim is Solarized light, let&rsquo;s keep this train a-rollin&#8217;.</p>
+
+<p>I quickly found two great fonts:
+<a href="http://montserrat.zkysky.com.ar/en">Montserrat</a> (headings)
+and <a href="http://www.google.com/fonts/specimen/Varela+Round">Varela Round</a> (body).
+Both are available on Google Web Fonts via the SIL Open Font License &mdash; what&rsquo;s not to love?</p>
+
+<h3>The problem</h3>
+
+<p>As it turns out, the answer is &ldquo;Google Chrome on Windows&rdquo;, especially with Google Web Fonts.</p>
+
+<p>For whatever reason, Chrome (only on Windows) doesn&rsquo;t render TTF or WOFF fonts well.
+This is especially frustrating because Google Web Fonts prioritizes TTF and WOFF fonts over others (they are listed earlier in the @font-face rule).
+If you use Google Web Fonts, you just load their CSS into your page, so there&rsquo;s no way to change the order.</p>
+
+<h3>The solution</h3>
+
+<p>Now, if you host your own fonts, or you can at least control your CSS, there is a fix.
+Chrome will render SVG fonts acceptably, so you just need to get Chrome to load the SVG font.
+You can do this in one of two ways.
+You can simply place the SVG earlier in the @font-face rule:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="k">@font-face</span> <span class="p">{</span>
+</span><span class='line'>    <span class="nt">font-family</span><span class="o">:</span> <span class="s1">&#39;my-webfont&#39;</span><span class="o">;</span>
+</span><span class='line'>    <span class="nt">src</span><span class="o">:</span> <span class="nt">url</span><span class="o">(</span><span class="s1">&#39;/fonts/my-webfont.eot&#39;</span><span class="o">);</span>
+</span><span class='line'>    <span class="nt">src</span><span class="o">:</span> <span class="nt">url</span><span class="o">(</span><span class="s1">&#39;/fonts/my-webfont.eot?#iefix&#39;</span><span class="o">)</span> <span class="nt">format</span><span class="o">(</span><span class="s1">&#39;eot&#39;</span><span class="o">),</span>
+</span><span class='line'>        <span class="nt">url</span><span class="o">(</span><span class="s1">&#39;/fonts/my-webfont.svg#myWebFont&#39;</span><span class="o">)</span> <span class="nt">format</span><span class="o">(</span><span class="s1">&#39;svg&#39;</span><span class="o">),</span>
+</span><span class='line'>        <span class="nt">url</span><span class="o">(</span><span class="s1">&#39;/fonts/my-webfont.woff&#39;</span><span class="o">)</span> <span class="nt">format</span><span class="o">(</span><span class="s1">&#39;woff&#39;</span><span class="o">),</span>
+</span><span class='line'>        <span class="nt">url</span><span class="o">(</span><span class="s1">&#39;/fonts/my-webfont.ttf&#39;</span><span class="o">)</span> <span class="nt">format</span><span class="o">(</span><span class="s1">&#39;truetype&#39;</span><span class="o">);</span>
+</span><span class='line'>    <span class="nt">font-weight</span><span class="o">:</span> <span class="nt">normal</span><span class="o">;</span>
+</span><span class='line'>    <span class="nt">font-style</span><span class="o">:</span> <span class="nt">normal</span><span class="o">;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Or you can create a separate @font-face rule that applies to Chrome only:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="k">@font-face</span> <span class="p">{</span>
+</span><span class='line'>    <span class="c">/* your existing font-face rule here, with SVG last */</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">@media</span> <span class="nt">screen</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">-webkit-min-device-pixel-ratio</span><span class="nd">:0</span><span class="o">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">@font-face</span> <span class="p">{</span>
+</span><span class='line'>      <span class="nt">font-family</span><span class="o">:</span> <span class="s1">&#39;my-webfont&#39;</span><span class="o">;</span>
+</span><span class='line'>      <span class="nt">src</span><span class="o">:</span> <span class="nt">url</span><span class="o">(</span><span class="s1">&#39;/fonts/my-webfont.svg#myWebFont&#39;</span><span class="o">)</span> <span class="nt">format</span><span class="o">(</span><span class="s1">&#39;svg&#39;</span><span class="o">);</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>It seems like the second method (Chrome-specific media query) is more widely accepted, and it should (in theory) work with Google Web Fonts, although you&rsquo;ll obviously need to host the SVG file yourself.</p>
+
+<h4>Notes</h4>
+
+<p>These links were very helpful in solving this issue: <a href="http://www.fontspring.com/blog/smoother-rendering-in-chrome-update">Fontspring</a>, <a href="http://www.adtrak.co.uk/blog/font-face-chrome-rendering/">Adtrak</a><br/>
+It looks like this will be fixed sometime in the next six months! <a href="https://code.google.com/p/chromium/issues/detail?id=137692">Chromium issue #137692</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Nitrous.io : Collaborate in the cloud]]></title>
-    <link href="http://LeeXGreen.github.io/blog/2014/01/04/nitrous-dot-io-collaboration-in-the-cloud/"/>
+    <link href="http://lee.greens.io/blog/2014/01/04/nitrous-dot-io-collaboration-in-the-cloud/"/>
     <updated>2014-01-04T12:28:00-05:00</updated>
-    <id>http://LeeXGreen.github.io/blog/2014/01/04/nitrous-dot-io-collaboration-in-the-cloud</id>
+    <id>http://lee.greens.io/blog/2014/01/04/nitrous-dot-io-collaboration-in-the-cloud</id>
     <content type="html"><![CDATA[<p>Over the past few months, I&rsquo;ve been helping some friends learn more about software development,
 working in Ruby and (eventually) covering most of the web stack.
 In this post, I&rsquo;ll talk a little about the tools we&rsquo;ve used to collaborate online, and about the one we&rsquo;ve been using most: <a href="https://www.nitrous.io/join/cs43HaW_jfc">Nitrous.io</a>.</p>
@@ -134,12 +230,12 @@ Once you&rsquo;ve signed up, feel free to post your referral link in the comment
   
   <entry>
     <title type="html"><![CDATA['Learn to Code'?]]></title>
-    <link href="http://LeeXGreen.github.io/blog/2013/12/29/learn-to-code/"/>
+    <link href="http://lee.greens.io/blog/2013/12/29/learn-to-code/"/>
     <updated>2013-12-29T14:54:00-05:00</updated>
-    <id>http://LeeXGreen.github.io/blog/2013/12/29/learn-to-code</id>
+    <id>http://lee.greens.io/blog/2013/12/29/learn-to-code</id>
     <content type="html"><![CDATA[<p>I was playing around with <a href="http://www.google.ca/trends/explore#q=%22learn%20to%20code%22%2C%20%22learn%20programming%22&amp;cmpt=q">Google Trends</a> the other day, and I discovered something interesting for the terms &ldquo;learn programming&rdquo; and &ldquo;learn to code&rdquo;.<br/>
 <a href="http://www.google.ca/trends/explore#q=%22learn%20to%20code%22%2C%20%22learn%20programming%22&cmpt=q">
-  <img src="http://LeeXGreen.github.io/images/search_graph.png" width="443" height="207">
+  <img src="http://lee.greens.io/images/search_graph.png" width="443" height="207">
 </a></p>
 
 <p>Look at those spikes!</p>
@@ -256,9 +352,9 @@ You need something to work towards, something you&rsquo;d like to accomplish, so
   
   <entry>
     <title type="html"><![CDATA[A shameful first post]]></title>
-    <link href="http://LeeXGreen.github.io/blog/2013/12/07/a-shameful-first-post/"/>
+    <link href="http://lee.greens.io/blog/2013/12/07/a-shameful-first-post/"/>
     <updated>2013-12-07T01:42:00-05:00</updated>
-    <id>http://LeeXGreen.github.io/blog/2013/12/07/a-shameful-first-post</id>
+    <id>http://lee.greens.io/blog/2013/12/07/a-shameful-first-post</id>
     <content type="html"><![CDATA[<p>So there you are, deep in the zone, cranking away on your project. You run your thing, and
 a minor invocation error causes it to spew 3-byte files all over your working directory.</p>
 

@@ -1,29 +1,31 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
-        <loc>http://LeeXGreen.github.io/blog/2013/12/07/a-shameful-first-post/</loc>
+        <loc>http://lee.greens.io/blog/2013/12/07/a-shameful-first-post/</loc>
         <lastmod>2013-12-30T00:36:57-05:00</lastmod>
     </url>
     <url>
-        <loc>http://LeeXGreen.github.io/blog/2013/12/29/learn-to-code/</loc>
+        <loc>http://lee.greens.io/blog/2013/12/29/learn-to-code/</loc>
         <lastmod>2014-01-13T23:52:45-05:00</lastmod>
     </url>
     <url>
-        <loc>
-            http://LeeXGreen.github.io/blog/2014/01/04/nitrous-dot-io-collaboration-in-the-cloud/
-        </loc>
+        <loc>http://lee.greens.io/blog/2014/01/04/nitrous-dot-io-collaboration-in-the-cloud/</loc>
         <lastmod>2014-01-10T21:42:08-05:00</lastmod>
     </url>
     <url>
-        <loc>http://LeeXGreen.github.io/blog/archives/</loc>
-        <lastmod>2014-01-13T23:52:45-05:00</lastmod>
+        <loc>http://lee.greens.io/blog/2014/01/13/windows-chrome/</loc>
+        <lastmod>2014-01-15T21:27:26-05:00</lastmod>
     </url>
     <url>
-        <loc>http://LeeXGreen.github.io/</loc>
-        <lastmod>2014-01-13T23:52:45-05:00</lastmod>
+        <loc>http://lee.greens.io/blog/archives/</loc>
+        <lastmod>2014-01-15T21:27:26-05:00</lastmod>
     </url>
     <url>
-        <loc>http://LeeXGreen.github.io/me/</loc>
+        <loc>http://lee.greens.io/</loc>
+        <lastmod>2014-01-15T21:27:26-05:00</lastmod>
+    </url>
+    <url>
+        <loc>http://lee.greens.io/me/</loc>
         <lastmod>2014-01-15T13:59:47-05:00</lastmod>
     </url>
 </urlset>
