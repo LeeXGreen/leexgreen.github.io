@@ -9,7 +9,7 @@ categories: ["Octopress", "Software"]
 It seems like every Octopress blog eventually includes a post about customizing Octopress itself.
 If my [previous post](/blog/2014/01/13/windows-chrome/) didn't count, this one certainly will.
 
-{% img left /octopress-favicon.png %}
+{% img left /images/octopress-favicon.png %}
 
 I see too many sites still running the stock Octopress favicon (pictured at left) -- even sites that are otherwise completely customized!
 This is one of the easiest changes you can make to customize the appearance of your site. Here's how to change it:
