@@ -3,7 +3,7 @@ layout: post
 title: "Windows Chrome, why do my fonts look so bad?"
 date: 2014-01-13 23:50
 comments: true
-categories: ["Software"]
+categories: ["Software", "Octopress"]
 ---
 
 Anyone who knows me will tell you that I don't exactly have great fashion sense.
