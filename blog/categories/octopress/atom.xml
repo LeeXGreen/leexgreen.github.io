@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Octopress | Lee Green]]></title>
   <link href="http://lee.greens.io/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://lee.greens.io/"/>
-  <updated>2014-01-19T13:04:29-05:00</updated>
+  <updated>2014-01-19T16:48:37-05:00</updated>
   <id>http://lee.greens.io/</id>
   <author>
     <name><![CDATA[Lee Green]]></name>
@@ -21,7 +21,7 @@
     <content type="html"><![CDATA[<p>It seems like every Octopress blog eventually includes a post about customizing Octopress itself.
 If my <a href="/blog/2014/01/13/windows-chrome/">previous post</a> didn&rsquo;t count, this one certainly will.</p>
 
-<p><img class="left" src="/octopress-favicon.png"></p>
+<p><img class="left" src="/images/octopress-favicon.png"></p>
 
 <p>I see too many sites still running the stock Octopress favicon (pictured at left) &mdash; even sites that are otherwise completely customized!
 This is one of the easiest changes you can make to customize the appearance of your site. Here&rsquo;s how to change it:</p>
@@ -78,10 +78,15 @@ Both are available on Google Web Fonts via the SIL Open Font License &mdash; wha
 
 <h3>The problem</h3>
 
-<p>As it turns out, the answer is &ldquo;Google Chrome on Windows&rdquo;, especially with Google Web Fonts.</p>
+<p>As it turns out, the answer is &ldquo;Google Chrome on Windows&rdquo;, especially with Google Web Fonts.
+For whatever reason, Chrome (only on Windows) doesn&rsquo;t render TTF or WOFF fonts well.
+Click the image below for a more detailed view:</p>
 
-<p>For whatever reason, Chrome (only on Windows) doesn&rsquo;t render TTF or WOFF fonts well.
-This is especially frustrating because Google Web Fonts prioritizes TTF and WOFF fonts over others (they are listed earlier in the @font-face rule).
+<p><a href="http://lee.greens.io/images/windows-chrome.png">
+<img src="/images/windows-chrome.png">
+</a></p>
+
+<p>This is especially frustrating because Google Web Fonts prioritizes TTF and WOFF fonts over others (they are listed earlier in the @font-face rule).
 If you use Google Web Fonts, you just load their CSS into your page, so there&rsquo;s no way to change the order.</p>
 
 <h3>The solution</h3>
