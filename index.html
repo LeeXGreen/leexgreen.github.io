@@ -9,8 +9,8 @@
   <meta name="author" content="Lee Green">
 
   
-  <meta name="description" content="Anyone who knows me will tell you that I don&rsquo;t exactly have great fashion sense.
-I don&rsquo;t wear bespoke suits. Our house is not &ldquo; &hellip;">
+  <meta name="description" content="It seems like every Octopress blog eventually includes a post about customizing Octopress itself.
+If my previous post didn&rsquo;t count, this one &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -80,6 +80,73 @@ I don&rsquo;t wear bespoke suits. Our house is not &ldquo; &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/01/18/change-your-octopress-favicon/">How to Change Your Octopress Favicon</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-01-18T13:17:00-05:00" pubdate data-updated="true">Jan 18<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>It seems like every Octopress blog eventually includes a post about customizing Octopress itself.
+If my <a href="/blog/2014/01/13/windows-chrome/">previous post</a> didn&rsquo;t count, this one certainly will.</p>
+
+<p><img class="left" src="/octopress-favicon.png"></p>
+
+<p>I see too many sites still running the stock Octopress favicon (pictured at left) &mdash; even sites that are otherwise completely customized!
+This is one of the easiest changes you can make to customize the appearance of your site. Here&rsquo;s how to change it:</p>
+
+<h3>Create an image file</h3>
+
+<p>Save your preferred icon as a 32x32 (pixels) PNG file.
+Historically speaking, favicons are 16x16, but High-PPI displays (&ldquo;Retina&rdquo;, in Apple&rsquo;s marketing language) are now the norm.</p>
+
+<h3>Replace the existing one</h3>
+
+<p>Replace the existing Octopress favicon in <code>source/favicon.png</code> with your newly created one.</p>
+
+<h3>Test!</h3>
+
+<p>Assuming you saw the default one before, the new one should show up without any issues.</p>
+
+<p>If it doesn&rsquo;t, ensure your theme has a link to the favicon.
+This is typically in <code>source/_includes/head.html</code>, although it may vary depending on your theme.
+There should be a line that looks like this:</p>
+
+<figure class='code'><figcaption><span>Favicon link </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">&quot;/favicon.png&quot;</span> <span class="na">rel=</span><span class="s">&quot;icon&quot;</span><span class="nt">&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>Note:</strong> When testing, use a different browser, or a private-browsing window, to avoid cache issues.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -394,6 +461,10 @@ in kilobytes (or more), I let myself get tempted into a shortcut.</p>
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/01/18/change-your-octopress-favicon/">How to Change your Octopress Favicon</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2014/01/13/windows-chrome/">Windows Chrome, why do my fonts look so bad?</a>

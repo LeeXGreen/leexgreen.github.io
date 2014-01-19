@@ -5,12 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Me - Lee Green</title>
+  <title>How to Change your Octopress Favicon - Lee Green</title>
   <meta name="author" content="Lee Green">
 
   
-  <meta name="description" content="Me I&rsquo;m an American (15 years in Texas), currently living in Montreal, Canada.
-I work as a Senior Software Developer at TouchTunes. Check out &hellip;">
+  <meta name="description" content="It seems like every Octopress blog eventually includes a post about customizing Octopress itself.
+If my previous post didn&rsquo;t count, this one &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +19,7 @@ I work as a Senior Software Developer at TouchTunes. Check out &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://lee.greens.io/me/">
+  <link rel="canonical" href="http://lee.greens.io/blog/2014/01/18/change-your-octopress-favicon/">
   <link href="/favicon.ico" rel="icon" type="image/x-icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -79,39 +79,124 @@ I work as a Senior Software Developer at TouchTunes. Check out &hellip;">
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Me</h1>
+    
+      <h1 class="entry-title">How to Change Your Octopress Favicon</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-01-18T13:17:00-05:00" pubdate data-updated="true">Jan 18<span>th</span>, 2014</time>
+        
+      </p>
     
   </header>
+
+
+<div class="entry-content"><p>It seems like every Octopress blog eventually includes a post about customizing Octopress itself.
+If my <a href="/blog/2014/01/13/windows-chrome/">previous post</a> didn&rsquo;t count, this one certainly will.</p>
+
+<p><img class="left" src="/octopress-favicon.png"></p>
+
+<p>I see too many sites still running the stock Octopress favicon (pictured at left) &mdash; even sites that are otherwise completely customized!
+This is one of the easiest changes you can make to customize the appearance of your site. Here&rsquo;s how to change it:</p>
+
+<h3>Create an image file</h3>
+
+<p>Save your preferred icon as a 32x32 (pixels) PNG file.
+Historically speaking, favicons are 16x16, but High-PPI displays (&ldquo;Retina&rdquo;, in Apple&rsquo;s marketing language) are now the norm.</p>
+
+<h3>Replace the existing one</h3>
+
+<p>Replace the existing Octopress favicon in <code>source/favicon.png</code> with your newly created one.</p>
+
+<h3>Test!</h3>
+
+<p>Assuming you saw the default one before, the new one should show up without any issues.</p>
+
+<p>If it doesn&rsquo;t, ensure your theme has a link to the favicon.
+This is typically in <code>source/_includes/head.html</code>, although it may vary depending on your theme.
+There should be a line that looks like this:</p>
+
+<figure class='code'><figcaption><span>Favicon link </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">&quot;/favicon.png&quot;</span> <span class="na">rel=</span><span class="s">&quot;icon&quot;</span><span class="nt">&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>Note:</strong> When testing, use a different browser, or a private-browsing window, to avoid cache issues.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
   
-  <p><img class="right"src="/images/me.jpg" width=160 height=160></p>
 
-<p>I&rsquo;m an American (15 years in Texas), currently living in Montreal, Canada.<br>
-I work as a Senior Software Developer at <a href="http://www.touchtunes.com/">TouchTunes</a>.</p>
+<span class="byline author vcard">Posted by <span class="fn">Lee Green</span></span>
 
-<p>Check out my <a href="https://github.com/LeeXGreen">GitHub</a> or <a href="https://www.linkedin.com/in/leexgreen">LinkedIn</a> if you&rsquo;re so inclined.</p>
+      
 
-<p>Cool things I&rsquo;ve done (that I can talk about):</p>
 
-<ul>
-<li><a href="http://www.touchtunes.com/sxsw/">SXSW 2013</a>
 
-<ul>
-<li>I designed and built the system that allowed party attendees to control the night&rsquo;s playlist. This was a lot of fun, and I definitely appreciated the chance to see Austin again.</li>
-</ul>
-</li>
-</ul>
+
+
+
 
 
   
-    <footer>
+
+
+<time datetime="2014-01-18T13:17:00-05:00" pubdate data-updated="true">Jan 18<span>th</span>, 2014</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/octopress/'>Octopress</a>, <a class='category' href='/blog/categories/software/'>Software</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://lee.greens.io/blog/2014/01/18/change-your-octopress-favicon/" data-via="LeeXGreen" data-counturl="http://lee.greens.io/blog/2014/01/18/change-your-octopress-favicon/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2014/01/13/windows-chrome/" title="Previous Post: Windows Chrome, why do my fonts look so bad?">&laquo; Windows Chrome, why do my fonts look so bad?</a>
       
       
-    </footer>
-  
+    </p>
+  </footer>
 </article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
 
 </div>
 
@@ -200,6 +285,22 @@ I work as a Senior Software Developer at <a href="http://www.touchtunes.com/">To
 
 </footer>
   
+
+<script type="text/javascript">
+      var disqus_shortname = 'LeeXGreen';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://lee.greens.io/blog/2014/01/18/change-your-octopress-favicon/';
+        var disqus_url = 'http://lee.greens.io/blog/2014/01/18/change-your-octopress-favicon/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
 
 
 
