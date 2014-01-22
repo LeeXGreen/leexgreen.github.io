@@ -96,6 +96,7 @@ disqus_show_comment_count: false
 
 # Google Analytics
 google_analytics_tracking_id: 'UA-45604507-1'
+use_google_universal_analytics: true
 
 # Facebook Like
 facebook_like: false
