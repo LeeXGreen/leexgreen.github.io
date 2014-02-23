@@ -19,3 +19,8 @@ Cool things I've done (that I can talk about):
 * [SXSW 2013](http://www.touchtunes.com/sxsw/)
   * I designed and built the system that allowed party attendees to control the night's playlist. This was a lot of fun, and I definitely appreciated the chance to see Austin again.
 
+###The Standard Disclaimer
+
+This is my personal web site. Any views or opinions stated here are solely my own,
+and do not necessarily represent those of my employer(s), their clients,
+or any affiliated persons or corporations.
