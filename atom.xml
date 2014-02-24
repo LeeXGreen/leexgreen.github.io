@@ -4,7 +4,7 @@
   <title><![CDATA[Lee Green]]></title>
   <link href="http://lee.greens.io/atom.xml" rel="self"/>
   <link href="http://lee.greens.io/"/>
-  <updated>2014-01-21T21:43:08-05:00</updated>
+  <updated>2014-02-24T13:33:20+00:00</updated>
   <id>http://lee.greens.io/</id>
   <author>
     <name><![CDATA[Lee Green]]></name>
@@ -14,9 +14,42 @@
 
   
   <entry>
+    <title type="html"><![CDATA[Print random line(s) from a file]]></title>
+    <link href="http://lee.greens.io/blog/2014/02/23/quick-tip-random-line-from-a-file/"/>
+    <updated>2014-02-23T23:29:00+00:00</updated>
+    <id>http://lee.greens.io/blog/2014/02/23/quick-tip-random-line-from-a-file</id>
+    <content type="html"><![CDATA[<p>Occasionally, I have a need to pull a random line (or lines) from a file.</p>
+
+<p>To make the example real, let&rsquo;s say we&rsquo;re parsing server logs, and the file contains one server name per line.
+If we want to test a change to our parser, we might want to choose a random server and parse the logs for only that server.</p>
+
+<p>shuf, from GNU textutils, makes this easy:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="c">#!/bin/bash</span>
+</span><span class='line'><span class="nv">source_file</span><span class="o">=</span><span class="s1">&#39;our_server_list&#39;</span>
+</span><span class='line'><span class="nv">server</span><span class="o">=</span><span class="sb">`</span>shuf -n 1 <span class="nv">$source_file</span><span class="sb">`</span>
+</span><span class='line'><span class="nb">echo</span> <span class="s2">&quot;The server we chose is: $server&quot;</span>
+</span><span class='line'>
+</span><span class='line'>./our_parser <span class="nv">$server</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The <code>-n</code> parameter controls the number of lines returned: in this case, 1.</p>
+
+<p>For more info on shuf, check <a href="http://en.wikipedia.org/wiki/Shuf">Wikipedia</a> or <a href="http://linux.die.net/man/1/shuf">its man page</a>.</p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[How to Change your Octopress Favicon]]></title>
     <link href="http://lee.greens.io/blog/2014/01/18/change-your-octopress-favicon/"/>
-    <updated>2014-01-18T13:17:00-05:00</updated>
+    <updated>2014-01-18T13:17:00+00:00</updated>
     <id>http://lee.greens.io/blog/2014/01/18/change-your-octopress-favicon</id>
     <content type="html"><![CDATA[<p>It seems like every Octopress blog eventually includes a post about customizing Octopress itself.
 If my <a href="http://lee.greens.io/blog/2014/01/13/windows-chrome/">previous post</a> didn&rsquo;t count, this one certainly will.</p>
@@ -56,7 +89,7 @@ There should be a line that looks like this:</p>
   <entry>
     <title type="html"><![CDATA[Windows Chrome, why do my fonts look so bad?]]></title>
     <link href="http://lee.greens.io/blog/2014/01/13/windows-chrome/"/>
-    <updated>2014-01-13T23:50:00-05:00</updated>
+    <updated>2014-01-13T23:50:00+00:00</updated>
     <id>http://lee.greens.io/blog/2014/01/13/windows-chrome</id>
     <content type="html"><![CDATA[<p>Anyone who knows me will tell you that I don&rsquo;t exactly have great fashion sense.
 I don&rsquo;t wear bespoke suits. Our house is not &ldquo;exquisitely decorated&rdquo;, or &ldquo;tastefully appointed&rdquo;.
@@ -157,7 +190,7 @@ It looks like this will be fixed sometime in the next six months! <a href="https
   <entry>
     <title type="html"><![CDATA[Nitrous.io : Collaborate in the cloud]]></title>
     <link href="http://lee.greens.io/blog/2014/01/04/nitrous-dot-io-collaboration-in-the-cloud/"/>
-    <updated>2014-01-04T12:28:00-05:00</updated>
+    <updated>2014-01-04T12:28:00+00:00</updated>
     <id>http://lee.greens.io/blog/2014/01/04/nitrous-dot-io-collaboration-in-the-cloud</id>
     <content type="html"><![CDATA[<p>Over the past few months, I&rsquo;ve been helping some friends learn more about software development,
 working in Ruby and (eventually) covering most of the web stack.
@@ -276,7 +309,7 @@ Once you&rsquo;ve signed up, feel free to post your referral link in the comment
   <entry>
     <title type="html"><![CDATA['Learn to Code'?]]></title>
     <link href="http://lee.greens.io/blog/2013/12/29/learn-to-code/"/>
-    <updated>2013-12-29T14:54:00-05:00</updated>
+    <updated>2013-12-29T14:54:00+00:00</updated>
     <id>http://lee.greens.io/blog/2013/12/29/learn-to-code</id>
     <content type="html"><![CDATA[<p>I was playing around with <a href="http://www.google.ca/trends/explore#q=%22learn%20to%20code%22%2C%20%22learn%20programming%22&amp;cmpt=q">Google Trends</a> the other day, and I discovered something interesting for the terms &ldquo;learn programming&rdquo; and &ldquo;learn to code&rdquo;.<br/>
 <a href="http://www.google.ca/trends/explore#q=%22learn%20to%20code%22%2C%20%22learn%20programming%22&cmpt=q">
@@ -398,7 +431,7 @@ You need something to work towards, something you&rsquo;d like to accomplish, so
   <entry>
     <title type="html"><![CDATA[A shameful first post]]></title>
     <link href="http://lee.greens.io/blog/2013/12/07/a-shameful-first-post/"/>
-    <updated>2013-12-07T01:42:00-05:00</updated>
+    <updated>2013-12-07T01:42:00+00:00</updated>
     <id>http://lee.greens.io/blog/2013/12/07/a-shameful-first-post</id>
     <content type="html"><![CDATA[<p>So there you are, deep in the zone, cranking away on your project. You run your thing, and
 a minor invocation error causes it to spew 3-byte files all over your working directory.</p>

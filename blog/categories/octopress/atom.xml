@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Octopress | Lee Green]]></title>
   <link href="http://lee.greens.io/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://lee.greens.io/"/>
-  <updated>2014-01-21T21:43:08-05:00</updated>
+  <updated>2014-02-24T13:33:20+00:00</updated>
   <id>http://lee.greens.io/</id>
   <author>
     <name><![CDATA[Lee Green]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[How to Change your Octopress Favicon]]></title>
     <link href="http://lee.greens.io/blog/2014/01/18/change-your-octopress-favicon/"/>
-    <updated>2014-01-18T13:17:00-05:00</updated>
+    <updated>2014-01-18T13:17:00+00:00</updated>
     <id>http://lee.greens.io/blog/2014/01/18/change-your-octopress-favicon</id>
     <content type="html"><![CDATA[<p>It seems like every Octopress blog eventually includes a post about customizing Octopress itself.
 If my <a href="/blog/2014/01/13/windows-chrome/">previous post</a> didn&rsquo;t count, this one certainly will.</p>
@@ -55,7 +55,7 @@ There should be a line that looks like this:</p>
   <entry>
     <title type="html"><![CDATA[Windows Chrome, why do my fonts look so bad?]]></title>
     <link href="http://lee.greens.io/blog/2014/01/13/windows-chrome/"/>
-    <updated>2014-01-13T23:50:00-05:00</updated>
+    <updated>2014-01-13T23:50:00+00:00</updated>
     <id>http://lee.greens.io/blog/2014/01/13/windows-chrome</id>
     <content type="html"><![CDATA[<p>Anyone who knows me will tell you that I don&rsquo;t exactly have great fashion sense.
 I don&rsquo;t wear bespoke suits. Our house is not &ldquo;exquisitely decorated&rdquo;, or &ldquo;tastefully appointed&rdquo;.

@@ -9,8 +9,7 @@
   <meta name="author" content="Lee Green">
 
   
-  <meta name="description" content="It seems like every Octopress blog eventually includes a post about customizing Octopress itself.
-If my previous post didn&rsquo;t count, this one &hellip;">
+  <meta name="description" content="Occasionally, I have a need to pull a random line (or lines) from a file. To make the example real, let&rsquo;s say we&rsquo;re parsing server logs, &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -89,6 +88,66 @@ If my previous post didn&rsquo;t count, this one &hellip;">
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2014/02/23/quick-tip-random-line-from-a-file/">Print Random Line(s) From a File</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-02-23T23:29:00+00:00" pubdate data-updated="true">Feb 23<span>rd</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Occasionally, I have a need to pull a random line (or lines) from a file.</p>
+
+<p>To make the example real, let&rsquo;s say we&rsquo;re parsing server logs, and the file contains one server name per line.
+If we want to test a change to our parser, we might want to choose a random server and parse the logs for only that server.</p>
+
+<p>shuf, from GNU textutils, makes this easy:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="c">#!/bin/bash</span>
+</span><span class='line'><span class="nv">source_file</span><span class="o">=</span><span class="s1">&#39;our_server_list&#39;</span>
+</span><span class='line'><span class="nv">server</span><span class="o">=</span><span class="sb">`</span>shuf -n 1 <span class="nv">$source_file</span><span class="sb">`</span>
+</span><span class='line'><span class="nb">echo</span> <span class="s2">&quot;The server we chose is: $server&quot;</span>
+</span><span class='line'>
+</span><span class='line'>./our_parser <span class="nv">$server</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The <code>-n</code> parameter controls the number of lines returned: in this case, 1.</p>
+
+<p>For more info on shuf, check <a href="http://en.wikipedia.org/wiki/Shuf">Wikipedia</a> or <a href="http://linux.die.net/man/1/shuf">its man page</a>.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2014/01/18/change-your-octopress-favicon/">How to Change Your Octopress Favicon</a></h1>
     
     
@@ -105,7 +164,7 @@ If my previous post didn&rsquo;t count, this one &hellip;">
   
 
 
-<time datetime="2014-01-18T13:17:00-05:00" pubdate data-updated="true">Jan 18<span>th</span>, 2014</time>
+<time datetime="2014-01-18T13:17:00+00:00" pubdate data-updated="true">Jan 18<span>th</span>, 2014</time>
         
       </p>
     
@@ -172,7 +231,7 @@ There should be a line that looks like this:</p>
   
 
 
-<time datetime="2014-01-13T23:50:00-05:00" pubdate data-updated="true">Jan 13<span>th</span>, 2014</time>
+<time datetime="2014-01-13T23:50:00+00:00" pubdate data-updated="true">Jan 13<span>th</span>, 2014</time>
         
       </p>
     
@@ -300,7 +359,7 @@ It looks like this will be fixed sometime in the next six months! <a href="https
   
 
 
-<time datetime="2014-01-04T12:28:00-05:00" pubdate data-updated="true">Jan 4<span>th</span>, 2014</time>
+<time datetime="2014-01-04T12:28:00+00:00" pubdate data-updated="true">Jan 4<span>th</span>, 2014</time>
         
       </p>
     
@@ -343,7 +402,7 @@ In this post, I&rsquo;ll talk a little about the tools we&rsquo;ve used to colla
   
 
 
-<time datetime="2013-12-29T14:54:00-05:00" pubdate data-updated="true">Dec 29<span>th</span>, 2013</time>
+<time datetime="2013-12-29T14:54:00+00:00" pubdate data-updated="true">Dec 29<span>th</span>, 2013</time>
         
       </p>
     
@@ -389,7 +448,7 @@ In this post, I&rsquo;ll talk a little about the tools we&rsquo;ve used to colla
   
 
 
-<time datetime="2013-12-07T01:42:00-05:00" pubdate data-updated="true">Dec 7<span>th</span>, 2013</time>
+<time datetime="2013-12-07T01:42:00+00:00" pubdate data-updated="true">Dec 7<span>th</span>, 2013</time>
         
       </p>
     
@@ -471,6 +530,10 @@ in kilobytes (or more), I let myself get tempted into a shortcut.</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/02/23/quick-tip-random-line-from-a-file/">Print random line(s) from a file</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/01/18/change-your-octopress-favicon/">How to Change your Octopress Favicon</a>
       </li>
     
@@ -484,10 +547,6 @@ in kilobytes (or more), I let myself get tempted into a shortcut.</p>
     
       <li class="post">
         <a href="/blog/2013/12/29/learn-to-code/">&#8216;Learn to Code&#8217;?</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/12/07/a-shameful-first-post/">A shameful first post</a>
       </li>
     
   </ul>

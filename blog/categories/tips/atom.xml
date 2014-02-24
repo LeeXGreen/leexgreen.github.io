@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Tips | Lee Green]]></title>
+  <link href="http://lee.greens.io/blog/categories/tips/atom.xml" rel="self"/>
+  <link href="http://lee.greens.io/"/>
+  <updated>2014-02-24T13:33:20+00:00</updated>
+  <id>http://lee.greens.io/</id>
+  <author>
+    <name><![CDATA[Lee Green]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Print random line(s) from a file]]></title>
+    <link href="http://lee.greens.io/blog/2014/02/23/quick-tip-random-line-from-a-file/"/>
+    <updated>2014-02-23T23:29:00+00:00</updated>
+    <id>http://lee.greens.io/blog/2014/02/23/quick-tip-random-line-from-a-file</id>
+    <content type="html"><![CDATA[<p>Occasionally, I have a need to pull a random line (or lines) from a file.</p>
+
+<p>To make the example real, let&rsquo;s say we&rsquo;re parsing server logs, and the file contains one server name per line.
+If we want to test a change to our parser, we might want to choose a random server and parse the logs for only that server.</p>
+
+<p>shuf, from GNU textutils, makes this easy:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;!/bin/bash&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;source_file<span class="o">=</span>&amp;lsquo;our_server_list&amp;rsquo;
+</span><span class='line'><span class="nv">server</span><span class="o">=</span>&lt;code&gt;shuf -n 1 <span class="nv">$source_file</span>&lt;/code&gt;
+</span><span class='line'><span class="nb">echo</span> &amp;ldquo;The server we chose is: <span class="nv">$server</span>&amp;rdquo;&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;./our_parser <span class="nv">$server</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>The <code>-n</code> parameter controls the number of lines returned: in this case, 1.</p>
+
+<p>For more info on shuf, check <a href="http://en.wikipedia.org/wiki/Shuf">Wikipedia</a> or <a href="http://linux.die.net/man/1/shuf">its man page</a>.</p>
+]]></content>
+  </entry>
+  
+</feed>

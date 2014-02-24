@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Software Education | Lee Green]]></title>
   <link href="http://lee.greens.io/blog/categories/software-education/atom.xml" rel="self"/>
   <link href="http://lee.greens.io/"/>
-  <updated>2014-01-21T21:43:08-05:00</updated>
+  <updated>2014-02-24T13:33:20+00:00</updated>
   <id>http://lee.greens.io/</id>
   <author>
     <name><![CDATA[Lee Green]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Nitrous.io : Collaborate in the cloud]]></title>
     <link href="http://lee.greens.io/blog/2014/01/04/nitrous-dot-io-collaboration-in-the-cloud/"/>
-    <updated>2014-01-04T12:28:00-05:00</updated>
+    <updated>2014-01-04T12:28:00+00:00</updated>
     <id>http://lee.greens.io/blog/2014/01/04/nitrous-dot-io-collaboration-in-the-cloud</id>
     <content type="html"><![CDATA[<p>Over the past few months, I&rsquo;ve been helping some friends learn more about software development,
 working in Ruby and (eventually) covering most of the web stack.
@@ -135,7 +135,7 @@ Once you&rsquo;ve signed up, feel free to post your referral link in the comment
   <entry>
     <title type="html"><![CDATA['Learn to Code'?]]></title>
     <link href="http://lee.greens.io/blog/2013/12/29/learn-to-code/"/>
-    <updated>2013-12-29T14:54:00-05:00</updated>
+    <updated>2013-12-29T14:54:00+00:00</updated>
     <id>http://lee.greens.io/blog/2013/12/29/learn-to-code</id>
     <content type="html"><![CDATA[<p>I was playing around with <a href="http://www.google.ca/trends/explore#q=%22learn%20to%20code%22%2C%20%22learn%20programming%22&amp;cmpt=q">Google Trends</a> the other day, and I discovered something interesting for the terms &ldquo;learn programming&rdquo; and &ldquo;learn to code&rdquo;.<br/>
 <a href="http://www.google.ca/trends/explore#q=%22learn%20to%20code%22%2C%20%22learn%20programming%22&cmpt=q">
