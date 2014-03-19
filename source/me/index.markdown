@@ -9,8 +9,8 @@ sidebar: collapse
 
 <img class="right"src="{{ root_url}}/images/me.jpg" width=160 height=160>
 
-I'm an American (15 years in Texas), currently living in Montreal, Canada.<br>
-I work as a Senior Software Developer at [TouchTunes](http://www.touchtunes.com/).
+I just moved back to Austin, Texas, after nearly 4 years in Montreal, Quebec.<br>
+I work as a Senior Software Developer at [DecisionGrid](http://www.decisiongrid.com/).
 
 Check out my [GitHub](https://github.com/LeeXGreen) or [LinkedIn](https://www.linkedin.com/in/leexgreen) if you're so inclined.
 
