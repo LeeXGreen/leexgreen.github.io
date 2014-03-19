@@ -23,11 +23,11 @@ My iTerm is Solarized dark, my graphical Vim is Solarized light, let's keep this
 I quickly found two great fonts:
 [Montserrat](http://montserrat.zkysky.com.ar/en) (headings)
 and [Varela Round](http://www.google.com/fonts/specimen/Varela+Round) (body).
-Both are available on Google Web Fonts via the SIL Open Font License -- what's not to love?
+Both are available on Google Fonts via the SIL Open Font License -- what's not to love?
 
 ### The problem
 
-As it turns out, the answer is "Google Chrome on Windows", especially with Google Web Fonts.
+As it turns out, the answer is "Google Chrome on Windows", especially with Google Fonts.
 For whatever reason, Chrome (only on Windows) doesn't render TTF or WOFF fonts well.
 Click the image below for a more detailed view:
 
@@ -35,8 +35,8 @@ Click the image below for a more detailed view:
 {% img /images/windows-chrome.png %}
 </a>
 
-This is especially frustrating because Google Web Fonts prioritizes TTF and WOFF fonts over others (they are listed earlier in the @font-face rule).
-If you use Google Web Fonts, you just load their CSS into your page, so there's no way to change the order.
+This is especially frustrating because Google Fonts prioritizes TTF and WOFF fonts over others (they are listed earlier in the @font-face rule).
+If you use Google Fonts, you just load their CSS into your page, so there's no way to change the order.
 
 ### The solution
 
@@ -71,7 +71,7 @@ Or you can create a separate @font-face rule that applies to Chrome only:
 }
 {% endcodeblock %}
 
-It seems like the second method (Chrome-specific media query) is more widely accepted, and it should (in theory) work with Google Web Fonts, although you'll obviously need to host the SVG file yourself.
+It seems like the second method (Chrome-specific media query) is more widely accepted, and it should (in theory) work with Google Fonts, although you'll obviously need to host the SVG file yourself.
 
 ####Notes
 
