@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Octopress | Lee Green]]></title>
   <link href="http://lee.greens.io/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://lee.greens.io/"/>
-  <updated>2014-02-24T13:33:20+00:00</updated>
+  <updated>2014-03-19T07:50:20+00:00</updated>
   <id>http://lee.greens.io/</id>
   <author>
     <name><![CDATA[Lee Green]]></name>
@@ -74,11 +74,11 @@ My iTerm is Solarized dark, my graphical Vim is Solarized light, let&rsquo;s kee
 <p>I quickly found two great fonts:
 <a href="http://montserrat.zkysky.com.ar/en">Montserrat</a> (headings)
 and <a href="http://www.google.com/fonts/specimen/Varela+Round">Varela Round</a> (body).
-Both are available on Google Web Fonts via the SIL Open Font License &mdash; what&rsquo;s not to love?</p>
+Both are available on Google Fonts via the SIL Open Font License &mdash; what&rsquo;s not to love?</p>
 
 <h3>The problem</h3>
 
-<p>As it turns out, the answer is &ldquo;Google Chrome on Windows&rdquo;, especially with Google Web Fonts.
+<p>As it turns out, the answer is &ldquo;Google Chrome on Windows&rdquo;, especially with Google Fonts.
 For whatever reason, Chrome (only on Windows) doesn&rsquo;t render TTF or WOFF fonts well.
 Click the image below for a more detailed view:</p>
 
@@ -86,8 +86,8 @@ Click the image below for a more detailed view:</p>
 <img src="/images/windows-chrome.png">
 </a></p>
 
-<p>This is especially frustrating because Google Web Fonts prioritizes TTF and WOFF fonts over others (they are listed earlier in the @font-face rule).
-If you use Google Web Fonts, you just load their CSS into your page, so there&rsquo;s no way to change the order.</p>
+<p>This is especially frustrating because Google Fonts prioritizes TTF and WOFF fonts over others (they are listed earlier in the @font-face rule).
+If you use Google Fonts, you just load their CSS into your page, so there&rsquo;s no way to change the order.</p>
 
 <h3>The solution</h3>
 
@@ -158,7 +158,7 @@ You can simply place the SVG earlier in the @font-face rule:
 </span><span class='line'><span class="p">}</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<p>It seems like the second method (Chrome-specific media query) is more widely accepted, and it should (in theory) work with Google Web Fonts, although you&rsquo;ll obviously need to host the SVG file yourself.</p>
+<p>It seems like the second method (Chrome-specific media query) is more widely accepted, and it should (in theory) work with Google Fonts, although you&rsquo;ll obviously need to host the SVG file yourself.</p>
 
 <h4>Notes</h4>
 
