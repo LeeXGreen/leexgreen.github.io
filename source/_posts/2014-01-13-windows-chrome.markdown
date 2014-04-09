@@ -73,6 +73,14 @@ Or you can create a separate @font-face rule that applies to Chrome only:
 
 It seems like the second method (Chrome-specific media query) is more widely accepted, and it should (in theory) work with Google Fonts, although you'll obviously need to host the SVG file yourself.
 
+###Convert fonts with Font Squirrel (April 2014)
+
+Since I wrote this up as a comment, I thought I'd include it in the article:
+
+The easiest way to convert your web fonts (including SVG) is to use the [Webfont Generator at Font Squirrel](http://www.fontsquirrel.com/tools/webfont-generator). It doesn't do SVG by default, so you'll need to switch over to Expert and enable SVG output. Then, you can either edit the order of the @font-face rule or add the Chrome-specific media query as you see fit.
+
+There are lots of free / open fonts out there, so don't use this tool to infringe!
+
 ####Notes
 
 These links were very helpful in solving this issue: [Fontspring](http://www.fontspring.com/blog/smoother-rendering-in-chrome-update), [Adtrak](http://www.adtrak.co.uk/blog/font-face-chrome-rendering/)  
