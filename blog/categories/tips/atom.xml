@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Tips | Lee Green]]></title>
   <link href="http://lee.greens.io/blog/categories/tips/atom.xml" rel="self"/>
   <link href="http://lee.greens.io/"/>
-  <updated>2014-03-19T07:50:20+00:00</updated>
+  <updated>2014-04-08T23:31:11-05:00</updated>
   <id>http://lee.greens.io/</id>
   <author>
     <name><![CDATA[Lee Green]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Print random line(s) from a file]]></title>
     <link href="http://lee.greens.io/blog/2014/02/23/quick-tip-random-line-from-a-file/"/>
-    <updated>2014-02-23T23:29:00+00:00</updated>
+    <updated>2014-02-23T23:29:00-06:00</updated>
     <id>http://lee.greens.io/blog/2014/02/23/quick-tip-random-line-from-a-file</id>
     <content type="html"><![CDATA[<p>Occasionally, I have a need to pull a random line (or lines) from a file.</p>
 

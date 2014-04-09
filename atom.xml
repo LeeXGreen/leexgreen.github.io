@@ -4,7 +4,7 @@
   <title><![CDATA[Lee Green]]></title>
   <link href="http://lee.greens.io/atom.xml" rel="self"/>
   <link href="http://lee.greens.io/"/>
-  <updated>2014-03-19T07:50:20+00:00</updated>
+  <updated>2014-04-08T23:31:11-05:00</updated>
   <id>http://lee.greens.io/</id>
   <author>
     <name><![CDATA[Lee Green]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Print random line(s) from a file]]></title>
     <link href="http://lee.greens.io/blog/2014/02/23/quick-tip-random-line-from-a-file/"/>
-    <updated>2014-02-23T23:29:00+00:00</updated>
+    <updated>2014-02-23T23:29:00-06:00</updated>
     <id>http://lee.greens.io/blog/2014/02/23/quick-tip-random-line-from-a-file</id>
     <content type="html"><![CDATA[<p>Occasionally, I have a need to pull a random line (or lines) from a file.</p>
 
@@ -49,7 +49,7 @@ If we want to test a change to our parser, we might want to choose a random serv
   <entry>
     <title type="html"><![CDATA[How to Change your Octopress Favicon]]></title>
     <link href="http://lee.greens.io/blog/2014/01/18/change-your-octopress-favicon/"/>
-    <updated>2014-01-18T13:17:00+00:00</updated>
+    <updated>2014-01-18T13:17:00-06:00</updated>
     <id>http://lee.greens.io/blog/2014/01/18/change-your-octopress-favicon</id>
     <content type="html"><![CDATA[<p>It seems like every Octopress blog eventually includes a post about customizing Octopress itself.
 If my <a href="http://lee.greens.io/blog/2014/01/13/windows-chrome/">previous post</a> didn&rsquo;t count, this one certainly will.</p>
@@ -89,7 +89,7 @@ There should be a line that looks like this:</p>
   <entry>
     <title type="html"><![CDATA[Windows Chrome, why do my fonts look so bad?]]></title>
     <link href="http://lee.greens.io/blog/2014/01/13/windows-chrome/"/>
-    <updated>2014-01-13T23:50:00+00:00</updated>
+    <updated>2014-01-13T23:50:00-06:00</updated>
     <id>http://lee.greens.io/blog/2014/01/13/windows-chrome</id>
     <content type="html"><![CDATA[<p>Anyone who knows me will tell you that I don&rsquo;t exactly have great fashion sense.
 I don&rsquo;t wear bespoke suits. Our house is not &ldquo;exquisitely decorated&rdquo;, or &ldquo;tastefully appointed&rdquo;.
@@ -180,6 +180,14 @@ You can simply place the SVG earlier in the @font-face rule:</p>
 
 <p>It seems like the second method (Chrome-specific media query) is more widely accepted, and it should (in theory) work with Google Fonts, although you&rsquo;ll obviously need to host the SVG file yourself.</p>
 
+<h3>Convert fonts with Font Squirrel (April 2014)</h3>
+
+<p>Since I wrote this up as a comment, I thought I&rsquo;d include it in the article:</p>
+
+<p>The easiest way to convert your web fonts (including SVG) is to use the <a href="http://www.fontsquirrel.com/tools/webfont-generator">Webfont Generator at Font Squirrel</a>. It doesn&rsquo;t do SVG by default, so you&rsquo;ll need to switch over to Expert and enable SVG output. Then, you can either edit the order of the @font-face rule or add the Chrome-specific media query as you see fit.</p>
+
+<p>There are lots of free / open fonts out there, so don&rsquo;t use this tool to infringe!</p>
+
 <h4>Notes</h4>
 
 <p>These links were very helpful in solving this issue: <a href="http://www.fontspring.com/blog/smoother-rendering-in-chrome-update">Fontspring</a>, <a href="http://www.adtrak.co.uk/blog/font-face-chrome-rendering/">Adtrak</a><br/>
@@ -190,7 +198,7 @@ It looks like this will be fixed sometime in the next six months! <a href="https
   <entry>
     <title type="html"><![CDATA[Nitrous.io : Collaborate in the cloud]]></title>
     <link href="http://lee.greens.io/blog/2014/01/04/nitrous-dot-io-collaboration-in-the-cloud/"/>
-    <updated>2014-01-04T12:28:00+00:00</updated>
+    <updated>2014-01-04T12:28:00-06:00</updated>
     <id>http://lee.greens.io/blog/2014/01/04/nitrous-dot-io-collaboration-in-the-cloud</id>
     <content type="html"><![CDATA[<p>Over the past few months, I&rsquo;ve been helping some friends learn more about software development,
 working in Ruby and (eventually) covering most of the web stack.
@@ -309,7 +317,7 @@ Once you&rsquo;ve signed up, feel free to post your referral link in the comment
   <entry>
     <title type="html"><![CDATA['Learn to Code'?]]></title>
     <link href="http://lee.greens.io/blog/2013/12/29/learn-to-code/"/>
-    <updated>2013-12-29T14:54:00+00:00</updated>
+    <updated>2013-12-29T14:54:00-06:00</updated>
     <id>http://lee.greens.io/blog/2013/12/29/learn-to-code</id>
     <content type="html"><![CDATA[<p>I was playing around with <a href="http://www.google.ca/trends/explore#q=%22learn%20to%20code%22%2C%20%22learn%20programming%22&amp;cmpt=q">Google Trends</a> the other day, and I discovered something interesting for the terms &ldquo;learn programming&rdquo; and &ldquo;learn to code&rdquo;.<br/>
 <a href="http://www.google.ca/trends/explore#q=%22learn%20to%20code%22%2C%20%22learn%20programming%22&cmpt=q">
@@ -431,7 +439,7 @@ You need something to work towards, something you&rsquo;d like to accomplish, so
   <entry>
     <title type="html"><![CDATA[A shameful first post]]></title>
     <link href="http://lee.greens.io/blog/2013/12/07/a-shameful-first-post/"/>
-    <updated>2013-12-07T01:42:00+00:00</updated>
+    <updated>2013-12-07T01:42:00-06:00</updated>
     <id>http://lee.greens.io/blog/2013/12/07/a-shameful-first-post</id>
     <content type="html"><![CDATA[<p>So there you are, deep in the zone, cranking away on your project. You run your thing, and
 a minor invocation error causes it to spew 3-byte files all over your working directory.</p>
