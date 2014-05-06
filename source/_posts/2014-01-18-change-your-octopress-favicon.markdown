@@ -3,7 +3,7 @@ layout: post
 title: "How to Change your Octopress Favicon"
 date: 2014-01-18 13:17
 comments: true
-categories: ["Octopress", "Software"]
+categories: ["Octopress", "Tips"]
 ---
 
 It seems like every Octopress blog eventually includes a post about customizing Octopress itself.

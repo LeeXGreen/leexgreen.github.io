@@ -3,7 +3,7 @@ layout: post
 title: "Nitrous.io : Collaborate in the cloud"
 date: 2014-01-04 12:28
 comments: true
-categories: ["Software", "Software Education"]
+categories: ["Software Education"]
 ---
 
 Over the past few months, I've been helping some friends learn more about software development,

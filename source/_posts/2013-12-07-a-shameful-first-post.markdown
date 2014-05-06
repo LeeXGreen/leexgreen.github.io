@@ -4,7 +4,7 @@ title: "A shameful first post"
 date: 2013-12-07 01:42
 comments: true
 sharing: true
-categories: [Software]
+categories: []
 ---
 
 So there you are, deep in the zone, cranking away on your project. You run your thing, and
