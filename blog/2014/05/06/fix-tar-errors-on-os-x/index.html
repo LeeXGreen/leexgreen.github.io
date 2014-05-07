@@ -5,12 +5,13 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>How to Change your Octopress Favicon - Lee Green</title>
+  <title>Fix tar errors on OS X - Lee Green</title>
   <meta name="author" content="Lee Green">
 
   
-  <meta name="description" content="It seems like every Octopress blog eventually includes a post about customizing Octopress itself.
-If my previous post didn&rsquo;t count, this one &hellip;">
+  <meta name="description" content="I&rsquo;ve worked on a lot of software projects over the past 10 years, and on many of
+them, developers worked on OS X (or a Linux VM, using
+Vagrant &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +20,7 @@ If my previous post didn&rsquo;t count, this one &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://lee.greens.io/blog/2014/01/18/change-your-octopress-favicon/">
+  <link rel="canonical" href="http://lee.greens.io/blog/2014/05/06/fix-tar-errors-on-os-x/">
   <link href="/favicon.ico" rel="icon" type="image/x-icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -86,7 +87,7 @@ If my previous post didn&rsquo;t count, this one &hellip;">
   
   <header>
     
-      <h1 class="entry-title">How to Change Your Octopress Favicon</h1>
+      <h1 class="entry-title">Fix Tar Errors on OS X</h1>
     
     
       <p class="meta">
@@ -102,45 +103,125 @@ If my previous post didn&rsquo;t count, this one &hellip;">
   
 
 
-<time datetime="2014-01-18T13:17:00-06:00" pubdate data-updated="true">Jan 18<span>th</span>, 2014</time>
+<time datetime="2014-05-06T16:06:00-05:00" pubdate data-updated="true">May 6<span>th</span>, 2014</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>It seems like every Octopress blog eventually includes a post about customizing Octopress itself.
-If my <a href="/blog/2014/01/13/windows-chrome/">previous post</a> didn&rsquo;t count, this one certainly will.</p>
+<div class="entry-content"><p>I&rsquo;ve worked on a lot of software projects over the past 10 years, and on many of
+them, developers worked on OS X (or a Linux VM, using
+<a href="http://www.vagrantup.com">Vagrant</a>), while the code was deployed on Linux.
+This can cause issues when extracting tar.gz files on Linux that were created on OS X.</p>
 
-<p><img class="left" src="/images/octopress-favicon.png"></p>
+<p>If you&rsquo;ve ever seen an error like this, you know what I&rsquo;m talking about:</p>
 
-<p>I see too many sites still running the stock Octopress favicon (pictured at left) &mdash; even sites that are otherwise completely customized!
-This is one of the easiest changes you can make to customize the appearance of your site. Here&rsquo;s how to change it:</p>
+<pre><code>tar: Ignoring unknown extended header keyword `SCHILY.dev'
+tar: Ignoring unknown extended header keyword `SCHILY.ino'
+tar: Ignoring unknown extended header keyword `SCHILY.nlink'
+tar: Error exit delayed from previous errors
+</code></pre>
 
-<h3>Create an image file</h3>
+<h2>What&rsquo;s going on?</h2>
 
-<p>Save your preferred icon as a 32x32 (pixels) PNG file.
-Historically speaking, favicons are 16x16, but High-PPI displays (&ldquo;Retina&rdquo;, in Apple&rsquo;s marketing language) are now the norm.</p>
+<p>There are a few issues at play here:</p>
 
-<h3>Replace the existing one</h3>
+<ul>
+<li>On OS X, the default tar version is BSD, whereas on Linux it is GNU.</li>
+<li>OS X encodes file attributes as extended headers in tar. BSD tar supports this,
+GNU tar does not.</li>
+<li>Some versions of GNU tar have a bug where, when they encounter extended headers,
+the exit code indicates failure &mdash; even though the files extracted just fine.</li>
+</ul>
 
-<p>Replace the existing Octopress favicon in <code>source/favicon.png</code> with your newly created one.</p>
 
-<h3>Test!</h3>
+<p>When combined, these will cause problems for automated scripts or, for that
+matter, anyone who cares about clean execution logs. :)</p>
 
-<p>Assuming you saw the default one before, the new one should show up without any issues.</p>
+<h2>How do we fix it?</h2>
 
-<p>If it doesn&rsquo;t, ensure your theme has a link to the favicon.
-This is typically in <code>source/_includes/head.html</code>, although it may vary depending on your theme.
-There should be a line that looks like this:</p>
+<p>There are several possible solutions:</p>
 
-<figure class='code'><figcaption><span>Favicon link </span></figcaption>
+<h3>Tell BSD tar not to insert the extended headers</h3>
+
+<p>This is probably the easiest method, and can be done at least two ways:</p>
+
+<figure class='code'><figcaption><span>Environment variable </span></figcaption>
 <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">&quot;/favicon.png&quot;</span> <span class="na">rel=</span><span class="s">&quot;icon&quot;</span><span class="nt">&gt;</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nb">export </span><span class="nv">COPYFILE_DISABLE</span><span class="o">=</span><span class="nb">true</span>
+</span><span class='line'>tar -czf <span class="nv">$your_tar_gz</span> <span class="nv">$your_files</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p><strong>Note:</strong> When testing, use a different browser, or a private-browsing window, to avoid cache issues.</p>
+
+
+<figure class='code'><figcaption><span>Command-line argument </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>tar --disable-copyfile -czf <span class="nv">$your_tar_gz</span> <span class="nv">$your_files</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Use BSD tar on Linux</h3>
+
+<p>This is not such a great option. For one, you need to make the change on your
+servers, as opposed to your development machines; secondly, you then need to
+keep track of which files are created with which version of tar.</p>
+
+<h3>Use GNU tar on OS X</h3>
+
+<p>This is my preferred option. No change to the server, and you get the assurance
+that the same version of tar will be used on both ends.</p>
+
+<p>In fact, for a long time, OS X shipped with GNU tar installed! If you&rsquo;re running
+a release before Mavericks, you can stop here and just invoke <code>gnutar</code> on OS X.
+This is easily scriptable:</p>
+
+<figure class='code'><figcaption><span>Use GNU tar on OS X </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">OS</span><span class="o">=</span><span class="sb">`</span>uname<span class="sb">`</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;$OS&quot;</span> <span class="o">==</span> <span class="s2">&quot;Darwin&quot;</span> <span class="o">]</span>; <span class="k">then</span>
+</span><span class='line'><span class="k">    </span><span class="nv">tar_bin</span><span class="o">=</span><span class="s1">&#39;gnutar&#39;</span>
+</span><span class='line'><span class="k">else</span>
+</span><span class='line'><span class="k">    </span><span class="nv">tar_bin</span><span class="o">=</span><span class="s1">&#39;tar&#39;</span>
+</span><span class='line'><span class="k">fi</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>For whatever reason, though, Apple stopped shipping GNU tar with OS X as of Mavericks.
+Not a problem &mdash; we&rsquo;ll just lean on our old friend <a href="http://brew.sh">Homebrew</a>!</p>
+
+<h2>Homebrew</h2>
+
+<p><a href="http://brew.sh">Homebrew</a> is a command-line package manager for OS X, which
+always has everything I&rsquo;m looking for. I love Homebrew, even if they do tell you
+to pipe curl into Ruby (<a href="http://blog.existentialize.com/dont-pipe-to-your-shell.html">see here</a>).</p>
+
+<p>Once you have Homebrew installed, installing GNU tar is as easy as:</p>
+
+<pre><code>brew install gnu-tar
+</code></pre>
+
+<p>This installs GNU tar as <code>gtar</code>. If you&rsquo;d like it available as <code>gnutar</code> like on
+previous versions of OS X, that&rsquo;s just one line as well:</p>
+
+<pre><code>sudo ln -s /usr/local/opt/gnu-tar/libexec/gnubin/tar /usr/bin/gnutar
+</code></pre>
+
+<h2>Links</h2>
+
+<p>I found the following links useful here. You might, also.</p>
+
+<p><a href="http://superuser.com/questions/318809/linux-os-x-tar-incompatibility-tarballs-created-onos-x-give-errors-when-unt">superuser.com</a><br/>
+<a href="http://xorl.wordpress.com/2012/05/15/admin-mistakes-gnu-bsd-tar-and-posix-compatibility/">xorl.wordpress.com</a></p>
 </div>
 
 
@@ -163,12 +244,12 @@ There should be a line that looks like this:</p>
   
 
 
-<time datetime="2014-01-18T13:17:00-06:00" pubdate data-updated="true">Jan 18<span>th</span>, 2014</time>
+<time datetime="2014-05-06T16:06:00-05:00" pubdate data-updated="true">May 6<span>th</span>, 2014</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/octopress/'>Octopress</a>, <a class='category' href='/blog/categories/tips/'>Tips</a>
+    <a class='category' href='/blog/categories/tips/'>Tips</a>
   
 </span>
 
@@ -177,7 +258,7 @@ There should be a line that looks like this:</p>
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://lee.greens.io/blog/2014/01/18/change-your-octopress-favicon/" data-via="LeeXGreen" data-counturl="http://lee.greens.io/blog/2014/01/18/change-your-octopress-favicon/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://lee.greens.io/blog/2014/05/06/fix-tar-errors-on-os-x/" data-via="LeeXGreen" data-counturl="http://lee.greens.io/blog/2014/05/06/fix-tar-errors-on-os-x/" >Tweet</a>
   
   
   <div class="g-plusone" data-size="medium"></div>
@@ -188,10 +269,8 @@ There should be a line that looks like this:</p>
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2014/01/13/windows-chrome/" title="Previous Post: Windows Chrome, why do my fonts look so bad?">&laquo; Windows Chrome, why do my fonts look so bad?</a>
+        <a class="basic-alignment left" href="/blog/2014/02/23/quick-tip-random-line-from-a-file/" title="Previous Post: Print random line(s) from a file">&laquo; Print random line(s) from a file</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2014/02/23/quick-tip-random-line-from-a-file/" title="Next Post: Print random line(s) from a file">Print random line(s) from a file &raquo;</a>
       
     </p>
   </footer>
@@ -297,8 +376,8 @@ There should be a line that looks like this:</p>
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://lee.greens.io/blog/2014/01/18/change-your-octopress-favicon/';
-        var disqus_url = 'http://lee.greens.io/blog/2014/01/18/change-your-octopress-favicon/';
+        var disqus_identifier = 'http://lee.greens.io/blog/2014/05/06/fix-tar-errors-on-os-x/';
+        var disqus_url = 'http://lee.greens.io/blog/2014/05/06/fix-tar-errors-on-os-x/';
         var disqus_script = 'embed.js';
       
     (function () {

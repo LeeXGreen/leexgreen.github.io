@@ -4,7 +4,7 @@
   <title><![CDATA[Lee Green]]></title>
   <link href="http://lee.greens.io/atom.xml" rel="self"/>
   <link href="http://lee.greens.io/"/>
-  <updated>2014-05-06T15:59:50-05:00</updated>
+  <updated>2014-05-06T20:30:54-05:00</updated>
   <id>http://lee.greens.io/</id>
   <author>
     <name><![CDATA[Lee Green]]></name>
@@ -12,6 +12,126 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Fix tar errors on OS X]]></title>
+    <link href="http://lee.greens.io/blog/2014/05/06/fix-tar-errors-on-os-x/"/>
+    <updated>2014-05-06T16:06:00-05:00</updated>
+    <id>http://lee.greens.io/blog/2014/05/06/fix-tar-errors-on-os-x</id>
+    <content type="html"><![CDATA[<p>I&rsquo;ve worked on a lot of software projects over the past 10 years, and on many of
+them, developers worked on OS X (or a Linux VM, using
+<a href="http://www.vagrantup.com">Vagrant</a>), while the code was deployed on Linux.
+This can cause issues when extracting tar.gz files on Linux that were created on OS X.</p>
+
+<p>If you&rsquo;ve ever seen an error like this, you know what I&rsquo;m talking about:</p>
+
+<pre><code>tar: Ignoring unknown extended header keyword `SCHILY.dev'
+tar: Ignoring unknown extended header keyword `SCHILY.ino'
+tar: Ignoring unknown extended header keyword `SCHILY.nlink'
+tar: Error exit delayed from previous errors
+</code></pre>
+
+<h2>What&rsquo;s going on?</h2>
+
+<p>There are a few issues at play here:</p>
+
+<ul>
+<li>On OS X, the default tar version is BSD, whereas on Linux it is GNU.</li>
+<li>OS X encodes file attributes as extended headers in tar. BSD tar supports this,
+GNU tar does not.</li>
+<li>Some versions of GNU tar have a bug where, when they encounter extended headers,
+the exit code indicates failure &mdash; even though the files extracted just fine.</li>
+</ul>
+
+
+<p>When combined, these will cause problems for automated scripts or, for that
+matter, anyone who cares about clean execution logs. :)</p>
+
+<h2>How do we fix it?</h2>
+
+<p>There are several possible solutions:</p>
+
+<h3>Tell BSD tar not to insert the extended headers</h3>
+
+<p>This is probably the easiest method, and can be done at least two ways:</p>
+
+<figure class='code'><figcaption><span>Environment variable </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nb">export </span><span class="nv">COPYFILE_DISABLE</span><span class="o">=</span><span class="nb">true</span>
+</span><span class='line'>tar -czf <span class="nv">$your_tar_gz</span> <span class="nv">$your_files</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span>Command-line argument </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>tar --disable-copyfile -czf <span class="nv">$your_tar_gz</span> <span class="nv">$your_files</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Use BSD tar on Linux</h3>
+
+<p>This is not such a great option. For one, you need to make the change on your
+servers, as opposed to your development machines; secondly, you then need to
+keep track of which files are created with which version of tar.</p>
+
+<h3>Use GNU tar on OS X</h3>
+
+<p>This is my preferred option. No change to the server, and you get the assurance
+that the same version of tar will be used on both ends.</p>
+
+<p>In fact, for a long time, OS X shipped with GNU tar installed! If you&rsquo;re running
+a release before Mavericks, you can stop here and just invoke <code>gnutar</code> on OS X.
+This is easily scriptable:</p>
+
+<figure class='code'><figcaption><span>Use GNU tar on OS X </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">OS</span><span class="o">=</span><span class="sb">`</span>uname<span class="sb">`</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;$OS&quot;</span> <span class="o">==</span> <span class="s2">&quot;Darwin&quot;</span> <span class="o">]</span>; <span class="k">then</span>
+</span><span class='line'><span class="k">    </span><span class="nv">tar_bin</span><span class="o">=</span><span class="s1">&#39;gnutar&#39;</span>
+</span><span class='line'><span class="k">else</span>
+</span><span class='line'><span class="k">    </span><span class="nv">tar_bin</span><span class="o">=</span><span class="s1">&#39;tar&#39;</span>
+</span><span class='line'><span class="k">fi</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>For whatever reason, though, Apple stopped shipping GNU tar with OS X as of Mavericks.
+Not a problem &mdash; we&rsquo;ll just lean on our old friend <a href="http://brew.sh">Homebrew</a>!</p>
+
+<h2>Homebrew</h2>
+
+<p><a href="http://brew.sh">Homebrew</a> is a command-line package manager for OS X, which
+always has everything I&rsquo;m looking for. I love Homebrew, even if they do tell you
+to pipe curl into Ruby (<a href="http://blog.existentialize.com/dont-pipe-to-your-shell.html">see here</a>).</p>
+
+<p>Once you have Homebrew installed, installing GNU tar is as easy as:</p>
+
+<pre><code>brew install gnu-tar
+</code></pre>
+
+<p>This installs GNU tar as <code>gtar</code>. If you&rsquo;d like it available as <code>gnutar</code> like on
+previous versions of OS X, that&rsquo;s just one line as well:</p>
+
+<pre><code>sudo ln -s /usr/local/opt/gnu-tar/libexec/gnubin/tar /usr/bin/gnutar
+</code></pre>
+
+<h2>Links</h2>
+
+<p>I found the following links useful here. You might, also.</p>
+
+<p><a href="http://superuser.com/questions/318809/linux-os-x-tar-incompatibility-tarballs-created-onos-x-give-errors-when-unt">superuser.com</a><br/>
+<a href="http://xorl.wordpress.com/2012/05/15/admin-mistakes-gnu-bsd-tar-and-posix-compatibility/">xorl.wordpress.com</a></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Print random line(s) from a file]]></title>
