@@ -9,8 +9,10 @@ sidebar: collapse
 
 <img class="right"src="{{ root_url}}/images/me.jpg" width=160 height=160>
 
-I just moved back to Austin, Texas, after nearly 4 years in Montreal, Quebec.<br>
-I work as a Senior Software Developer at [DecisionGrid](http://www.decisiongrid.com/).
+I live in beautiful Austin, Texas, where I work as a Senior Software Developer
+at [DecisionGrid](http://www.decisiongrid.com/).
+
+I'm open to interesting full-time and consulting opportunities.
 
 Check out my [GitHub](https://github.com/LeeXGreen) or [LinkedIn](https://www.linkedin.com/in/leexgreen) if you're so inclined.
 
