@@ -81,7 +81,13 @@ The easiest way to convert your web fonts (including SVG) is to use the [Webfont
 
 There are lots of free / open fonts out there, so don't use this tool to infringe!
 
+###Update (July 2014)
+
+Supposedly, this issue is resolved with Chrome 37 (now available).
+I haven't had the chance to update my Windows machine yet, but we'll see if
+this is finally fixed!
+
 ####Notes
 
 These links were very helpful in solving this issue: [Fontspring](http://www.fontspring.com/blog/smoother-rendering-in-chrome-update), [Adtrak](http://www.adtrak.co.uk/blog/font-face-chrome-rendering/)  
-It looks like this will be fixed sometime in the next six months! [Chromium issue #137692](https://code.google.com/p/chromium/issues/detail?id=137692)
+Here's the Chromium issue (now resolved): [Chromium issue #137692](https://code.google.com/p/chromium/issues/detail?id=137692)
