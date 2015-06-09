@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Print random line(s) from a file - Lee Green</title>
+  <title>Category: Developer Superpowers - Lee Green</title>
   <meta name="author" content="Lee Green">
 
   
-  <meta name="description" content="Occasionally, I have a need to pull a random line (or lines) from a file. To make the example real, let&rsquo;s say we&rsquo;re parsing server logs, &hellip;">
+  <meta name="description" content="Category: Developer Superpowers">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://lee.greens.io/blog/2014/02/23/quick-tip-random-line-from-a-file/">
+  <link rel="canonical" href="http://lee.greens.ioblog/categories/developer-superpowers/">
   <link href="/favicon.ico" rel="icon" type="image/x-icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -81,119 +81,36 @@
   <div id="main">
     <div id="content">
       <div>
-<article class="hentry" role="article">
+<article role="article">
   
   <header>
-    
-      <h1 class="entry-title">Print Random Line(s) From a File</h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-02-23T23:29:00-06:00" pubdate data-updated="true">Feb 23<span>rd</span>, 2014</time>
-        
-      </p>
+    <h1 class="entry-title">Category: Developer Superpowers</h1>
     
   </header>
-
-
-<div class="entry-content"><p>Occasionally, I have a need to pull a random line (or lines) from a file.</p>
-
-<p>To make the example real, let&rsquo;s say we&rsquo;re parsing server logs, and the file contains one server name per line.
-If we want to test a change to our parser, we might want to choose a random server and parse the logs for only that server.</p>
-
-<p>shuf, from GNU textutils, makes this easy:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="c">#!/bin/bash</span>
-</span><span class='line'><span class="nv">source_file</span><span class="o">=</span><span class="s1">&#39;our_server_list&#39;</span>
-</span><span class='line'><span class="nv">server</span><span class="o">=</span><span class="sb">`</span>shuf -n 1 <span class="nv">$source_file</span><span class="sb">`</span>
-</span><span class='line'><span class="nb">echo</span> <span class="s2">&quot;The server we chose is: $server&quot;</span>
-</span><span class='line'>
-</span><span class='line'>./our_parser <span class="nv">$server</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>The <code>-n</code> parameter controls the number of lines returned: in this case, 1.</p>
-
-<p>For more info on shuf, check <a href="http://en.wikipedia.org/wiki/Shuf">Wikipedia</a> or <a href="http://linux.die.net/man/1/shuf">its man page</a>.</p>
-</div>
-
-
-  <footer>
-    <p class="meta">
-      
   
-
-<span class="byline author vcard">Posted by <span class="fn">Lee Green</span></span>
-
-      
-
-
-
-
-
+  <div id="blog-archives" class="category">
 
 
 
   
+  <h2>2015</h2>
+
+<article>
+  
+<h1><a href="/blog/2015/06/08/developer-superpower-z/">Developer Superpower: Z</a></h1>
+<time datetime="2015-06-08T18:04:00-05:00" pubdate><span class='month'>Jun</span> <span class='day'>08</span> <span class='year'>2015</span></time>
+
+<footer>
+  <span class="categories">posted in <a class='category' href='/blog/categories/developer-superpowers/'>Developer Superpowers</a></span>
+</footer>
 
 
-<time datetime="2014-02-23T23:29:00-06:00" pubdate data-updated="true">Feb 23<span>rd</span>, 2014</time>
-      
-
-<span class="categories">
-  
-    <a class='category' href='/blog/categories/tips/'>Tips</a>
-  
-</span>
-
-
-    </p>
-    
-      <div class="sharing">
-  
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://lee.greens.io/blog/2014/02/23/quick-tip-random-line-from-a-file/" data-via="LeeXGreen" data-counturl="http://lee.greens.io/blog/2014/02/23/quick-tip-random-line-from-a-file/" >Tweet</a>
-  
-  
-  <div class="g-plusone" data-size="medium"></div>
-  
-  
-</div>
-
-    
-    <p class="meta">
-      
-        <a class="basic-alignment left" href="/blog/2014/01/18/change-your-octopress-favicon/" title="Previous Post: How to Change your Octopress Favicon">&laquo; How to Change your Octopress Favicon</a>
-      
-      
-        <a class="basic-alignment right" href="/blog/2014/05/06/fix-tar-errors-on-os-x/" title="Next Post: Fix tar errors on OS X">Fix tar errors on OS X &raquo;</a>
-      
-    </p>
-  </footer>
 </article>
 
-  <section>
-    <h1>Comments</h1>
-    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </div>
-  </section>
+
+  
+</article>
 
 </div>
 
@@ -288,10 +205,7 @@ If we want to test a change to our parser, we might want to choose a random serv
       var disqus_shortname = 'LeeXGreen';
       
         
-        // var disqus_developer = 1;
-        var disqus_identifier = 'http://lee.greens.io/blog/2014/02/23/quick-tip-random-line-from-a-file/';
-        var disqus_url = 'http://lee.greens.io/blog/2014/02/23/quick-tip-random-line-from-a-file/';
-        var disqus_script = 'embed.js';
+        var disqus_script = 'count.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

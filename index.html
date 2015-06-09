@@ -9,9 +9,8 @@
   <meta name="author" content="Lee Green">
 
   
-  <meta name="description" content="I&rsquo;ve worked on a lot of software projects over the past 10 years, and on many of
-them, developers worked on OS X (or a Linux VM, using
-Vagrant &hellip;">
+  <meta name="description" content="This is the first in a series of posts
+designed to help you supercharge your workflow. Anyone who uses a command-line interface needs to change &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -84,6 +83,112 @@ Vagrant &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2015/06/08/developer-superpower-z/">Developer Superpower: Z</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-06-08T18:04:00-05:00" pubdate data-updated="true">Jun 8<span>th</span>, 2015</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><small>
+This is the first in a <a href="/blog/categories/developer-superpowers/">series of posts</a>
+designed to help you supercharge your workflow.
+</small></p>
+
+<p>Anyone who uses a command-line interface needs to change directories on a
+regular basis. Even if your terminal emulator allows you to open new windows
+in the same directory as previous ones, you still need to move around to get
+work done.</p>
+
+<h3>The problem</h3>
+
+<p><img class="right" src="/images/soap_fail.gif"></p>
+
+<p>Getting directory paths right can take a lot of time, especially within a new
+project or a new environment. Shell tab completion can help, but it still has
+to be navigated, and new entries mess with your muscle memory.</p>
+
+<p>There are, of course, more creative solutions: I&rsquo;ve seen developers who create
+aliases for each major project directory they work with, which is nice at first,
+but it doesn&rsquo;t really scale.</p>
+
+<h3>The solution</h3>
+
+<p>As is typical in computing, we can stand on the shoulders of giants &mdash; Behold
+<a href="https://github.com/rupa/z">Z</a>, a directory jumper which enables freaky-fast
+directory switching:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ z blog; pwd
+</span><span class='line'>/Users/this_is_me/devel/blog
+</span><span class='line'>
+</span><span class='line'>$ z bigco roi; pwd
+</span><span class='line'>/Users/this_is_me/devel/consulting/bigco/2014/roi_reporting_project
+</span><span class='line'>
+</span><span class='line'>$ z scipy 0.15; pwd
+</span><span class='line'>/Users/this_is_me/devel/oss/scipy/0.15</span></code></pre></td></tr></table></div></figure>
+
+
+<p>It chooses directories based on <em>frecency</em>, which is &ldquo;a portmanteau of
+frequency and recency&rdquo;.  It has a few options, so check
+<a href="https://github.com/rupa/z">GitHub</a>, but I usually just invoke it bare &mdash;
+in my experience, it pretty much always Does What I Mean.</p>
+
+<h3>Installation</h3>
+
+<p>If you&rsquo;re on OS X, it&rsquo;s available via <a href="http://brew.sh/">Homebrew</a>, or follow
+the instructions below.</p>
+
+<p>Just save it to disk and source it in your shell files &mdash; e.g. for bash:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>curl -o ~/.z.sh -sSL https://raw.githubusercontent.com/rupa/z/d5adc9a6239c2ee44309fd78bca68f301eb0d45a/z.sh
+</span><span class='line'><span class="c"># examine the downloaded file, if all appears good:</span>
+</span><span class='line'><span class="nb">echo</span> <span class="s1">&#39;. ~/.z.sh&#39;</span> &gt;&gt; ~/.bashrc
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Afterwards, you may have to open a new terminal, or restart.</p>
+
+<p><em>Note:</em> The above snippet uses HTTPS and a fixed Git SHA, but do be careful here,
+since we&rsquo;re basically <a href="http://www.seancassidy.me/dont-pipe-to-your-shell.html">piping curl to shell</a>.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -693,6 +798,10 @@ in kilobytes (or more), I let myself get tempted into a shortcut.</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2015/06/08/developer-superpower-z/">Developer Superpower: Z</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/05/06/fix-tar-errors-on-os-x/">Fix tar errors on OS X</a>
       </li>
     
@@ -706,10 +815,6 @@ in kilobytes (or more), I let myself get tempted into a shortcut.</p>
     
       <li class="post">
         <a href="/blog/2014/01/13/windows-chrome/">Windows Chrome, why do my fonts look so bad?</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/01/04/nitrous-dot-io-collaboration-in-the-cloud/">Nitrous.io : Collaborate in the cloud</a>
       </li>
     
   </ul>

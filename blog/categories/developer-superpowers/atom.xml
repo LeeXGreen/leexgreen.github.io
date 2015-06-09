@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Developer Superpowers | Lee Green]]></title>
+  <link href="http://lee.greens.io/blog/categories/developer-superpowers/atom.xml" rel="self"/>
+  <link href="http://lee.greens.io/"/>
+  <updated>2015-06-08T23:20:16-05:00</updated>
+  <id>http://lee.greens.io/</id>
+  <author>
+    <name><![CDATA[Lee Green]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Developer Superpower: Z]]></title>
+    <link href="http://lee.greens.io/blog/2015/06/08/developer-superpower-z/"/>
+    <updated>2015-06-08T18:04:00-05:00</updated>
+    <id>http://lee.greens.io/blog/2015/06/08/developer-superpower-z</id>
+    <content type="html"><![CDATA[<p><small>
+This is the first in a <a href="/blog/categories/developer-superpowers/">series of posts</a>
+designed to help you supercharge your workflow.
+</small></p>
+
+<p>Anyone who uses a command-line interface needs to change directories on a
+regular basis. Even if your terminal emulator allows you to open new windows
+in the same directory as previous ones, you still need to move around to get
+work done.</p>
+
+<h3>The problem</h3>
+
+<p><img class="right" src="/images/soap_fail.gif"></p>
+
+<p>Getting directory paths right can take a lot of time, especially within a new
+project or a new environment. Shell tab completion can help, but it still has
+to be navigated, and new entries mess with your muscle memory.</p>
+
+<p>There are, of course, more creative solutions: I&rsquo;ve seen developers who create
+aliases for each major project directory they work with, which is nice at first,
+but it doesn&rsquo;t really scale.</p>
+
+<h3>The solution</h3>
+
+<p>As is typical in computing, we can stand on the shoulders of giants &mdash; Behold
+<a href="https://github.com/rupa/z">Z</a>, a directory jumper which enables freaky-fast
+directory switching:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ z blog; pwd
+</span><span class='line'>/Users/this_is_me/devel/blog&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p>$ z bigco roi; pwd
+</span><span class='line'>/Users/this_is_me/devel/consulting/bigco/2014/roi_reporting_project&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p>$ z scipy 0.15; pwd
+</span><span class='line'>/Users/this_is_me/devel/oss/scipy/0.15</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>It chooses directories based on <em>frecency</em>, which is &ldquo;a portmanteau of
+frequency and recency&rdquo;.  It has a few options, so check
+<a href="https://github.com/rupa/z">GitHub</a>, but I usually just invoke it bare &mdash;
+in my experience, it pretty much always Does What I Mean.</p>
+
+<h3>Installation</h3>
+
+<p>If you&rsquo;re on OS X, it&rsquo;s available via <a href="http://brew.sh/">Homebrew</a>, or follow
+the instructions below.</p>
+
+<p>Just save it to disk and source it in your shell files &mdash; e.g. for bash:
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>curl -o ~/.z.sh -sSL &lt;a <span class="nv">href</span><span class="o">=</span><span class="s2">&quot;https://raw.githubusercontent.com/rupa/z/d5adc9a6239c2ee44309fd78bca68f301eb0d45a/z.sh&quot;</span>&gt;https://raw.githubusercontent.com/rupa/z/d5adc9a6239c2ee44309fd78bca68f301eb0d45a/z.sh&lt;/a&gt;&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;examine the downloaded file, <span class="k">if </span>all appears good:&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;echo &amp;lsquo;. ~/.z.sh&amp;rsquo; &gt;&gt; ~/.bashrc
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Afterwards, you may have to open a new terminal, or restart.</p>
+
+<p><em>Note:</em> The above snippet uses HTTPS and a fixed Git SHA, but do be careful here,
+since we&rsquo;re basically <a href="http://www.seancassidy.me/dont-pipe-to-your-shell.html">piping curl to shell</a>.</p>
+]]></content>
+  </entry>
+  
+</feed>
