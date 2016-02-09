@@ -9,8 +9,10 @@
   <meta name="author" content="Lee Green">
 
   
-  <meta name="description" content="This is the first in a series of posts
-designed to help you supercharge your workflow. Anyone who uses a command-line interface needs to change &hellip;">
+  <meta name="description" content="This is the second in a
+series of posts
+designed to help you supercharge your workflow. In my last post I mentioned
+aliases in passing. A few &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -83,6 +85,206 @@ designed to help you supercharge your workflow. Anyone who uses a command-line i
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2016/02/08/developer-superpower-aliases/">Developer Superpower: Aliases</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2016-02-08T23:08:00-06:00" pubdate data-updated="true">Feb 8<span>th</span>, 2016</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><small>
+This is the second in a
+<a href="/blog/categories/developer-superpowers/">series of posts</a>
+designed to help you supercharge your workflow.
+</small></p>
+
+<p>In my <a href="/blog/2015/06/08/developer-superpower-z/">last post</a> I mentioned
+aliases in passing. A few readers asked me for more information, so I thought
+I&rsquo;d write another post.</p>
+
+<p>An alias is essentially a shortcut, or abbreviation, which lets you &ldquo;remap&rdquo; any
+command to run one or more other commands. Many developer / command-line tools
+support aliases, from command-line shells like bash, zsh, or PowerShell, to
+version-control systems like Git or Mercurial. I&rsquo;ll give concrete examples for
+bash and Git in this post.</p>
+
+<p>Before I do, though, I want to talk about the reasons one might create an alias.
+I find that the aliases I need can be classified into a few categories:</p>
+
+<h3>Convenience</h3>
+
+<p>These aliases are all about speed, so they&rsquo;re as short as possible.
+<code>git diff</code> takes too long to type? Alias it to <code>gd</code>.
+The most common example of this is the <code>ll</code> alias for <code>ls -l</code>, now included
+in many Linux distros by default.</p>
+
+<p>I also include in this category aliases that cover common typos, for example:</p>
+
+<ul>
+<li><code>cd..</code> instead of <code>cd ..</code> (leaving out the space)</li>
+<li><code>rpsec</code> instead of <code>rspec</code> (transposing the s and the p)</li>
+<li><code>xs</code> or <code>vf</code> instead of <code>cd</code> (off-by-one error)</li>
+<li><code>gut</code> or <code>got</code> instead of <code>git</code> (off-by-one error on the other hand)</li>
+</ul>
+
+
+<h3>Backwards compatibility</h3>
+
+<p>I started working as a software developer before Linus created Git, in what
+many consider &ldquo;the dark ages&rdquo;. As such, I spent a few years using RCS and CVS
+for version control. In RCS the commands for <code>check out</code> and <code>check in</code> are
+<code>co</code> and <code>ci</code>; these commands were preserved in CVS as aliases for
+<code>checkout</code> and <code>commit</code> respectively.</p>
+
+<p>As Git became popular and our projects switched over to using it exclusively,
+a senior developer I worked with set up extensive aliases so he could continue
+using the same commands he&rsquo;d been used to. I try not to go that far, but muscle
+memory is powerful &mdash; and aliases like this can save you a lot of pain.</p>
+
+<h3>Frame of mind</h3>
+
+<p>This one actually started as a backwards compatibility alias, but its role has
+really evolved for me over time. Most version-control systems have a command
+that shows you which user last modified each line in a file. In SVN, this
+commmand is called <code>blame</code>, but it has aliases: <code>annotate</code> and <code>praise</code>.</p>
+
+<p>When we switched to Git, that same senior dev installed <code>praise</code> as an alias for
+<code>blame</code>. Even though I&rsquo;ve never used SVN heavily, I still invoke <code>praise</code> every
+time, because it reminds me to be charitable with my fellow developers.</p>
+
+<h2>Bash</h2>
+
+<p>In Bash, aliases are created using <code>alias</code>, and destroyed with <code>unalias</code>:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nb">alias </span><span class="nv">ll</span><span class="o">=</span><span class="s1">&#39;ls -l&#39;</span>
+</span><span class='line'><span class="nb">alias </span><span class="nv">rpsec</span><span class="o">=</span><span class="s1">&#39;rspec&#39;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nb">unalias </span>ll
+</span><span class='line'><span class="nb">unalias </span>rpsec
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Personal aliases are typically defined in the <code>~/.bashrc</code> file.</p>
+
+<p>Note that aliases can cover or &ldquo;shadow&rdquo; existing commands. This can be both
+frustrating and awesome. For example, if you alias <code>ls</code> to <code>ls -G</code>, all your
+invocations of <code>ls</code> will hit the alias, not the base command.</p>
+
+<p><a href="http://tldp.org/LDP/abs/html/aliases.html">tldp.org</a> has more information on aliases in Bash.</p>
+
+<h2>Git</h2>
+
+<p>There are two ways to create Git aliases. The first is via command line:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>git config --global alias.co checkout
+</span><span class='line'>git config --global alias.ci commit
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The second way is via editing a <code>~/.gitconfig</code> (global) or
+<code>.git/config</code> (per-repository) file (this is my actual gitconfig file):</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+</pre></td><td class='code'><pre><code class='ini'><span class='line'><span class="k">[alias]</span>
+</span><span class='line'>    <span class="na">ci</span> <span class="o">=</span> <span class="s">commit</span>
+</span><span class='line'><span class="s">    co = checkout</span>
+</span><span class='line'><span class="s">    st = status</span>
+</span><span class='line'><span class="s">    stat = status</span>
+</span><span class='line'><span class="s">    praise = blame</span>
+</span><span class='line'><span class="s">    sb = show-branch</span>
+</span><span class='line'><span class="s">    what = whatchanged</span>
+</span><span class='line'><span class="s">    br = branch -a --color</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="c1"># &quot;merged branches&quot; -- which branches are ancestors of the specified ref?</span>
+</span><span class='line'>    <span class="na">mbr</span> <span class="o">=</span> <span class="s">branch -a --merged</span>
+</span><span class='line'><span class="s">    # &quot;what branches&quot; -- which branches contain the specified ref?</span>
+</span><span class='line'><span class="s">    wbr = branch -a --contains</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="c1"># typo</span>
+</span><span class='line'>    <span class="na">difff</span> <span class="o">=</span> <span class="s">diff</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="c1"># list all aliases</span>
+</span><span class='line'>    <span class="na">la</span> <span class="o">=</span> <span class="s">&quot;!git config -l | grep alias | cut -c 7-&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>You can shell out in a Git alias, by starting the alias with a <code>!</code> character:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>git config --global alias.visual <span class="s1">&#39;!gitk&#39;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>It&rsquo;s worth noting that the awesome <a href="https://github.com/git/git/blob/master/contrib/completion/git-completion.bash">git-completion</a> supports
+tab completion for aliases, as well as Git builtin commands. You should probably
+install it, if you haven&rsquo;t already :)</p>
+
+<p>For more information on Git aliases, see the Pro Git book (pay for it!), or
+check <a href="https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases">here.</a></p>
+
+<p>Here are a few samples of real-world Git aliases. Check these out, steal them
+for your own use, and remix them to increase your productivity!</p>
+
+<ul>
+<li><a href="https://gist.github.com/mwhite/6887990">The Ultimate Git Alias Setup</a></li>
+<li><a href="http://durdn.com/blog/2012/11/22/must-have-git-aliases-advanced-examples/">Must-Have Git Aliases</a></li>
+<li><a href="https://ochronus.com/git-tips-from-the-trenches/">Git Tips from the Trenches</a></li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -798,6 +1000,10 @@ in kilobytes (or more), I let myself get tempted into a shortcut.</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2016/02/08/developer-superpower-aliases/">Developer Superpower: Aliases</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/06/08/developer-superpower-z/">Developer Superpower: Z</a>
       </li>
     
@@ -811,10 +1017,6 @@ in kilobytes (or more), I let myself get tempted into a shortcut.</p>
     
       <li class="post">
         <a href="/blog/2014/01/18/change-your-octopress-favicon/">How to Change your Octopress Favicon</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/01/13/windows-chrome/">Windows Chrome, why do my fonts look so bad?</a>
       </li>
     
   </ul>
@@ -870,7 +1072,7 @@ in kilobytes (or more), I let myself get tempted into a shortcut.</p>
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2015 - Lee Green -
+  Copyright &copy; 2016 - Lee Green -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 
