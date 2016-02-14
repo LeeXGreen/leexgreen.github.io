@@ -10,7 +10,7 @@ sidebar: collapse
 <img class="right"src="{{ root_url}}/images/me.jpg" width=160 height=160>
 
 I live in beautiful Austin, Texas, where I work as a Staff Software Developer
-at [Spiceworks](http://www.spiceworks.com/).
+at [Spiceworks](https://www.spiceworks.com/).
 
 Check out my [GitHub](https://github.com/LeeXGreen) or
 [LinkedIn](https://www.linkedin.com/in/leexgreen) if you're so inclined.
